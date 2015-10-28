@@ -39,6 +39,8 @@
 
                           <th>Kode supplier</th>
 													<th>Nama</th>
+													<th>No rekening</th>
+													<th>NPWP</th>
 													<th>Tanggal terdaftar</th>
 													
 							<th>Aksi</th>

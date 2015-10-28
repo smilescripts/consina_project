@@ -27,21 +27,17 @@
                       <div class="form-group">
                         <label for="Golongan Pelanggan" class="control-label col-lg-2">Golongan Pelanggan</label>
                         <div class="col-lg-10">
-                          <input type="text" name="GOLONGAN_PELANGGAN" placeholder="Golongan Pelanggan" class="form-control" > 
+                         <!-- <input type="text" name="GOLONGAN_PELANGGAN" placeholder="Golongan Pelanggan" class="form-control" > -->
+						    <select name="GOLONGAN_PELANGGAN" data-placeholder="Pilih Golongan ..." class="form-control chzn-select" tabindex="1" required>
+							   <option value=""></option>
+							   <option value="Consina Store">Consina Store</option>
+							   <option value="Distributor">Distributor</option>
+							   <option value="Reseller">Reseller</option>
+							</select>
+						  
                         </div>
                       </div><!-- /.form-group -->
-<div class="form-group">
-                        <label for="Jenis Pelanggan" class="control-label col-lg-2">Jenis Pelanggan</label>
-                        <div class="col-lg-10">
-                          <input type="text" name="JENIS_PELANGGAN" placeholder="Jenis Pelanggan" class="form-control" > 
-                        </div>
-                      </div><!-- /.form-group -->
-<div class="form-group">
-                        <label for="Produk Pelanggan" class="control-label col-lg-2">Produk Pelanggan</label>
-                        <div class="col-lg-10">
-                          <input type="text" name="PRODUK_PELANGGAN" placeholder="Produk Pelanggan" class="form-control" > 
-                        </div>
-                      </div><!-- /.form-group -->
+
 <div class="form-group">
                         <label for="Kode Pelanggan" class="control-label col-lg-2">Kode Pelanggan</label>
                         <div class="col-lg-10">

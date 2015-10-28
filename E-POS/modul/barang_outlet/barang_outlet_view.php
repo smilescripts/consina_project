@@ -40,7 +40,10 @@
                           <th>Kode barang</th>
 													<th>Barcode</th>
 													<th>Nama barang</th>
+													<th>Warna</th>
+													<th>Ukuran</th>
 													<th>Harga jual</th>
+													<th>Stok min</th>
 													<th>Stok</th>
 													<th>Kategori</th>
 													<th>Satuan</th>

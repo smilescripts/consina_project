@@ -30,18 +30,7 @@
                           <input type="text" disabled="" value="<?=$data_edit->GOLONGAN_PELANGGAN;?>" class="form-control">
                         </div>
                       </div><!-- /.form-group -->
-<div class="form-group">
-                        <label for="Jenis Pelanggan" class="control-label col-lg-2">Jenis Pelanggan</label>
-                        <div class="col-lg-10">
-                          <input type="text" disabled="" value="<?=$data_edit->JENIS_PELANGGAN;?>" class="form-control">
-                        </div>
-                      </div><!-- /.form-group -->
-<div class="form-group">
-                        <label for="Produk Pelanggan" class="control-label col-lg-2">Produk Pelanggan</label>
-                        <div class="col-lg-10">
-                          <input type="text" disabled="" value="<?=$data_edit->PRODUK_PELANGGAN;?>" class="form-control">
-                        </div>
-                      </div><!-- /.form-group -->
+
 <div class="form-group">
                         <label for="Kode Pelanggan" class="control-label col-lg-2">Kode Pelanggan</label>
                         <div class="col-lg-10">

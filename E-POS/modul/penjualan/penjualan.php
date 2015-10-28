@@ -31,6 +31,10 @@ switch ($path_act) {
     $data_edit = $db->fetch_single_row("penjualan","ID_PENJUALAN",$path_id);
     include "penjualan_detail.php";
     break;
+	 case "batal":
+    $data_edit = $db->fetch_single_row("penjualan","ID_PENJUALAN",$path_id);
+    include "penjualan_batal.php";
+    break;
 	default:
 		include "penjualan_view.php";
 		break;

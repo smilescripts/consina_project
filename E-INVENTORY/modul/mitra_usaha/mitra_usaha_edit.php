@@ -30,21 +30,25 @@
                       <div class="form-group">
                         <label for="Golongan Pelanggan" class="control-label col-lg-2">Golongan Pelanggan</label>
                         <div class="col-lg-10">
-                          <input type="text" name="GOLONGAN_PELANGGAN" value="<?=$data_edit->GOLONGAN_PELANGGAN;?>" class="form-control" > 
+                          <!-- <input type="text" name="GOLONGAN_PELANGGAN" value="<?=$data_edit->GOLONGAN_PELANGGAN;?>" class="form-control" > -->
+						  <select name="GOLONGAN_PELANGGAN" data-placeholder="Pilih Golongan ..." class="form-control chzn-select" tabindex="1" required>
+							 
+							  <?php foreach ($db->fetch_all("pelanggan") as $isi) {
+
+										if ($data_edit->GOLONGAN_PELANGGAN==$isi->ID_PELANGGAN) {
+											echo "<option value='$isi->ID_PELANGGAN' selected>$isi->GOLONGAN_PELANGGAN</option>";
+										} else {
+										echo "<option value='$isi->ID_PELANGGAN'>$isi->GOLONGAN_PELANGGAN</option>";
+											}
+								   } ?>
+								  
+								  <option value="Consina Store">Consina Store</option>
+							   <option value="Distributor">Distributor</option>
+							   <option value="Reseller">Reseller</option>
+							</select>
                         </div>
                       </div><!-- /.form-group -->
-<div class="form-group">
-                        <label for="Jenis Pelanggan" class="control-label col-lg-2">Jenis Pelanggan</label>
-                        <div class="col-lg-10">
-                          <input type="text" name="JENIS_PELANGGAN" value="<?=$data_edit->JENIS_PELANGGAN;?>" class="form-control" > 
-                        </div>
-                      </div><!-- /.form-group -->
-<div class="form-group">
-                        <label for="Produk Pelanggan" class="control-label col-lg-2">Produk Pelanggan</label>
-                        <div class="col-lg-10">
-                          <input type="text" name="PRODUK_PELANGGAN" value="<?=$data_edit->PRODUK_PELANGGAN;?>" class="form-control" > 
-                        </div>
-                      </div><!-- /.form-group -->
+
 <div class="form-group">
                         <label for="Kode Pelanggan" class="control-label col-lg-2">Kode Pelanggan</label>
                         <div class="col-lg-10">

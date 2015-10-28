@@ -50,6 +50,18 @@
                         </div>
                       </div><!-- /.form-group -->
 <div class="form-group">
+                        <label for="No rekening" class="control-label col-lg-2">No rekening</label>
+                        <div class="col-lg-10">
+                          <input type="text" data-rule-number="true" name="NO_REKENING" value="<?=$data_edit->NO_REKENING;?>" class="form-control" required> 
+                        </div>
+                      </div><!-- /.form-group -->
+<div class="form-group">
+                        <label for="Npwp" class="control-label col-lg-2">Npwp</label>
+                        <div class="col-lg-10">
+                          <input type="text" data-rule-number="true" name="NPWP" value="<?=$data_edit->NPWP;?>" class="form-control" required> 
+                        </div>
+                      </div><!-- /.form-group -->
+<div class="form-group">
                         <label for="Nama perusahaan" class="control-label col-lg-2">Nama perusahaan</label>
                         <div class="col-lg-10">
                           <input type="text" name="NAMA_PERUSAHAAN" value="<?=$data_edit->NAMA_PERUSAHAAN;?>" class="form-control" > 

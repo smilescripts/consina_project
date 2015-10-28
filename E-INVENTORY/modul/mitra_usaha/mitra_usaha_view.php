@@ -41,8 +41,6 @@
                                      <tr>
                            <th style="width:25px" align="center">No</th>
                           <th>Golongan</th>
-													<th>Jenis</th>
-													<th>Produk</th>
 													<th>Kode Pelanggan</th>
 													<th>Nama</th>
 													<th>Alamat</th>
@@ -54,13 +52,11 @@
                                       </thead>
                                         <tbody>
                                          <?php 
-			$dtb=$db->fetch_custom("select pelanggan.GOLONGAN_PELANGGAN,pelanggan.JENIS_PELANGGAN,pelanggan.PRODUK_PELANGGAN,pelanggan.KODE_PELANGGAN,pelanggan.NAMA_PELANGGAN,pelanggan.ALAMAT,pelanggan.KOTA,pelanggan.ID_PELANGGAN from pelanggan ");
+			$dtb=$db->fetch_custom("select pelanggan.GOLONGAN_PELANGGAN,pelanggan.KODE_PELANGGAN,pelanggan.NAMA_PELANGGAN,pelanggan.ALAMAT,pelanggan.KOTA,pelanggan.ID_PELANGGAN from pelanggan ");
 			$i=1;
 			foreach ($dtb as $isi) {
 				?><tr id="line_<?=$isi->ID_PELANGGAN;?>">
         <td align="center"><?=$i;?></td><td><?=$isi->GOLONGAN_PELANGGAN;?></td>
-<td><?=$isi->JENIS_PELANGGAN;?></td>
-<td><?=$isi->PRODUK_PELANGGAN;?></td>
 <td><?=$isi->KODE_PELANGGAN;?></td>
 <td><?=$isi->NAMA_PELANGGAN;?></td>
 <td><?=$isi->ALAMAT;?></td>

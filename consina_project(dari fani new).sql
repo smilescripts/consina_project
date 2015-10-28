@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 03 Nov 2015 pada 13.58
--- Versi Server: 5.6.20
+-- Generation Time: Oct 28, 2015 at 10:45 AM
+-- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `as_aset`
+-- Table structure for table `as_aset`
 --
 
 CREATE TABLE IF NOT EXISTS `as_aset` (
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `as_aset` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `as_aset`
+-- Dumping data for table `as_aset`
 --
 
 INSERT INTO `as_aset` (`kode_barang`, `nm_barang`, `kode_golongan`, `sub_golongan`, `merk`, `tipe`, `tahun`, `volume`, `tgl_entry`, `user_posting`, `total_unit`, `masa_servis`, `poto`) VALUES
@@ -57,7 +57,7 @@ INSERT INTO `as_aset` (`kode_barang`, `nm_barang`, `kode_golongan`, `sub_golonga
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `as_cabang`
+-- Table structure for table `as_cabang`
 --
 
 CREATE TABLE IF NOT EXISTS `as_cabang` (
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `as_cabang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `as_cabang`
+-- Dumping data for table `as_cabang`
 --
 
 INSERT INTO `as_cabang` (`kode_cabang`, `nm_cabang`, `alamat`, `propinsi`, `kabupaten`, `telepon`, `pincab`, `user_posting`, `tgl_posting`) VALUES
@@ -83,7 +83,7 @@ INSERT INTO `as_cabang` (`kode_cabang`, `nm_cabang`, `alamat`, `propinsi`, `kabu
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `as_cabangpusat`
+-- Table structure for table `as_cabangpusat`
 --
 
 CREATE TABLE IF NOT EXISTS `as_cabangpusat` (
@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `as_cabangpusat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `as_cabangpusat`
+-- Dumping data for table `as_cabangpusat`
 --
 
 INSERT INTO `as_cabangpusat` (`kode_cabang`) VALUES
@@ -100,7 +100,7 @@ INSERT INTO `as_cabangpusat` (`kode_cabang`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `as_golongan`
+-- Table structure for table `as_golongan`
 --
 
 CREATE TABLE IF NOT EXISTS `as_golongan` (
@@ -115,7 +115,7 @@ CREATE TABLE IF NOT EXISTS `as_golongan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `as_golongan`
+-- Dumping data for table `as_golongan`
 --
 
 INSERT INTO `as_golongan` (`kode_golongan`, `kode_harta`, `nm_golongan`, `keterangan`, `persen_susut`, `masa_manfaat`, `tgl_posting`, `user_posting`) VALUES
@@ -128,7 +128,7 @@ INSERT INTO `as_golongan` (`kode_golongan`, `kode_harta`, `nm_golongan`, `ketera
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `as_harta_berwujud`
+-- Table structure for table `as_harta_berwujud`
 --
 
 CREATE TABLE IF NOT EXISTS `as_harta_berwujud` (
@@ -140,7 +140,7 @@ CREATE TABLE IF NOT EXISTS `as_harta_berwujud` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `as_harta_berwujud`
+-- Dumping data for table `as_harta_berwujud`
 --
 
 INSERT INTO `as_harta_berwujud` (`kode_harta`, `nm_harta`, `ket`, `tgl_posting`, `user_posting`) VALUES
@@ -151,7 +151,7 @@ INSERT INTO `as_harta_berwujud` (`kode_harta`, `nm_harta`, `ket`, `tgl_posting`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `as_head_pengadaan`
+-- Table structure for table `as_head_pengadaan`
 --
 
 CREATE TABLE IF NOT EXISTS `as_head_pengadaan` (
@@ -161,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `as_head_pengadaan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `as_head_pengadaan`
+-- Dumping data for table `as_head_pengadaan`
 --
 
 INSERT INTO `as_head_pengadaan` (`kode_pengadaan`, `tanggal_pengadaan`, `user_posting`) VALUES
@@ -171,7 +171,7 @@ INSERT INTO `as_head_pengadaan` (`kode_pengadaan`, `tanggal_pengadaan`, `user_po
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `as_history_ubah`
+-- Table structure for table `as_history_ubah`
 --
 
 CREATE TABLE IF NOT EXISTS `as_history_ubah` (
@@ -185,7 +185,7 @@ CREATE TABLE IF NOT EXISTS `as_history_ubah` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `as_history_ubah`
+-- Dumping data for table `as_history_ubah`
 --
 
 INSERT INTO `as_history_ubah` (`id_history`, `kode_inventarisasi`, `status_before`, `status_after`, `tgl_ubah`, `keterangan_ubah`, `user_ubah`) VALUES
@@ -202,7 +202,7 @@ INSERT INTO `as_history_ubah` (`id_history`, `kode_inventarisasi`, `status_befor
 ('PRB0010000000002', 'CB001-AST0010002-RNG001-UN001-0000000002', 0, 1, '2015-10-22', '', 'Admin');
 
 --
--- Trigger `as_history_ubah`
+-- Triggers `as_history_ubah`
 --
 DELIMITER //
 CREATE TRIGGER `hapus history` AFTER DELETE ON `as_history_ubah`
@@ -222,7 +222,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `as_inventarisasi`
+-- Table structure for table `as_inventarisasi`
 --
 
 CREATE TABLE IF NOT EXISTS `as_inventarisasi` (
@@ -239,7 +239,7 @@ CREATE TABLE IF NOT EXISTS `as_inventarisasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `as_inventarisasi`
+-- Dumping data for table `as_inventarisasi`
 --
 
 INSERT INTO `as_inventarisasi` (`kode_inventarisasi`, `kode_barang`, `kode_cabang`, `kode_unit`, `kode_ruangan`, `jumlah`, `kondisi`, `tgl_posting`, `user_posting`, `status`) VALUES
@@ -253,7 +253,7 @@ INSERT INTO `as_inventarisasi` (`kode_inventarisasi`, `kode_barang`, `kode_caban
 ('CB002-AST0010003-RNG003-UN002-0000000001', 'AST0010003', 'CB002', 'UN002', 'RNG003', 1, '', '2015-10-22', 'Admin', '0');
 
 --
--- Trigger `as_inventarisasi`
+-- Triggers `as_inventarisasi`
 --
 DELIMITER //
 CREATE TRIGGER `kembalistok` AFTER DELETE ON `as_inventarisasi`
@@ -273,7 +273,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `as_maintenance`
+-- Table structure for table `as_maintenance`
 --
 
 CREATE TABLE IF NOT EXISTS `as_maintenance` (
@@ -291,7 +291,7 @@ CREATE TABLE IF NOT EXISTS `as_maintenance` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `as_maintenance`
+-- Dumping data for table `as_maintenance`
 --
 
 INSERT INTO `as_maintenance` (`id_pemeliharaan`, `kode_inventarisasi`, `tgl_servis`, `tgl_servis_berikutnya`, `tempat_servis`, `keluhan`, `keterangan_pem`, `tgl_posting`, `user_posting`, `biaya_servis`, `flag`) VALUES
@@ -308,7 +308,7 @@ INSERT INTO `as_maintenance` (`id_pemeliharaan`, `kode_inventarisasi`, `tgl_serv
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `as_mutasi`
+-- Table structure for table `as_mutasi`
 --
 
 CREATE TABLE IF NOT EXISTS `as_mutasi` (
@@ -329,7 +329,7 @@ CREATE TABLE IF NOT EXISTS `as_mutasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `as_mutasi`
+-- Dumping data for table `as_mutasi`
 --
 
 INSERT INTO `as_mutasi` (`id_mutasi`, `tgl_mutasi`, `kode_cabang_lama`, `kode_cabang_baru`, `kode_inventarisasi`, `kode_inventarisasi_baru`, `kode_aset`, `ruang_lama`, `ruang_baru`, `unit_lama`, `unit_baru`, `jumlah`, `user_posting`, `keterangan`) VALUES
@@ -337,7 +337,7 @@ INSERT INTO `as_mutasi` (`id_mutasi`, `tgl_mutasi`, `kode_cabang_lama`, `kode_ca
 ('MTS0010000000002', '2015-10-22', 'CB002', 'CB001', 'CB002-AST0010003-RNG003-UN002-0000000002', 'CB001-AST0010003-RNG002-UN001-0000000001', 'AST0010003', 'RNG003', 'RNG002', 'UN002', 'UN001', 1, 'Admin', '');
 
 --
--- Trigger `as_mutasi`
+-- Triggers `as_mutasi`
 --
 DELIMITER //
 CREATE TRIGGER `mutashapus` AFTER DELETE ON `as_mutasi`
@@ -365,7 +365,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `as_pengadaan`
+-- Table structure for table `as_pengadaan`
 --
 
 CREATE TABLE IF NOT EXISTS `as_pengadaan` (
@@ -386,7 +386,7 @@ CREATE TABLE IF NOT EXISTS `as_pengadaan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Trigger `as_pengadaan`
+-- Triggers `as_pengadaan`
 --
 DELIMITER //
 CREATE TRIGGER `kembali_jumlahaset` AFTER DELETE ON `as_pengadaan`
@@ -406,7 +406,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `as_penyusutan`
+-- Table structure for table `as_penyusutan`
 --
 
 CREATE TABLE IF NOT EXISTS `as_penyusutan` (
@@ -433,7 +433,7 @@ CREATE TABLE IF NOT EXISTS `as_penyusutan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `as_penyusutan`
+-- Dumping data for table `as_penyusutan`
 --
 
 INSERT INTO `as_penyusutan` (`kode_barang`, `tgl_pengadaan`, `kode_cabang`, `jumlah_unit`, `nilai_buku`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `tahun_buku`, `status`, `kode_pengadaan`) VALUES
@@ -469,7 +469,7 @@ INSERT INTO `as_penyusutan` (`kode_barang`, `tgl_pengadaan`, `kode_cabang`, `jum
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `as_pertumbuhan`
+-- Table structure for table `as_pertumbuhan`
 --
 
 CREATE TABLE IF NOT EXISTS `as_pertumbuhan` (
@@ -486,7 +486,7 @@ CREATE TABLE IF NOT EXISTS `as_pertumbuhan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `as_pertumbuhan`
+-- Dumping data for table `as_pertumbuhan`
 --
 
 INSERT INTO `as_pertumbuhan` (`kode_barang`, `kode_cabang`, `tgl_pengadaan`, `jum_awal`, `nilai_awal`, `jum_kurang`, `nilai_kurang`, `jum_tambah`, `nilai_tambah`, `status`) VALUES
@@ -498,7 +498,7 @@ INSERT INTO `as_pertumbuhan` (`kode_barang`, `kode_cabang`, `tgl_pengadaan`, `ju
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `as_ruangan`
+-- Table structure for table `as_ruangan`
 --
 
 CREATE TABLE IF NOT EXISTS `as_ruangan` (
@@ -510,7 +510,7 @@ CREATE TABLE IF NOT EXISTS `as_ruangan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `as_ruangan`
+-- Dumping data for table `as_ruangan`
 --
 
 INSERT INTO `as_ruangan` (`kode_ruangan`, `nm_ruangan`, `keterangan`, `user_posting`, `tgl_posting`) VALUES
@@ -523,7 +523,7 @@ INSERT INTO `as_ruangan` (`kode_ruangan`, `nm_ruangan`, `keterangan`, `user_post
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `as_status`
+-- Table structure for table `as_status`
 --
 
 CREATE TABLE IF NOT EXISTS `as_status` (
@@ -532,7 +532,7 @@ CREATE TABLE IF NOT EXISTS `as_status` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `as_status`
+-- Dumping data for table `as_status`
 --
 
 INSERT INTO `as_status` (`status`, `nm_status`) VALUES
@@ -544,7 +544,7 @@ INSERT INTO `as_status` (`status`, `nm_status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `as_subgolongan`
+-- Table structure for table `as_subgolongan`
 --
 
 CREATE TABLE IF NOT EXISTS `as_subgolongan` (
@@ -556,7 +556,7 @@ CREATE TABLE IF NOT EXISTS `as_subgolongan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `as_subgolongan`
+-- Dumping data for table `as_subgolongan`
 --
 
 INSERT INTO `as_subgolongan` (`sub_golongan`, `kode_golongan`, `nm_subgolongan`, `tgl_posting`, `user_posting`) VALUES
@@ -573,7 +573,7 @@ INSERT INTO `as_subgolongan` (`sub_golongan`, `kode_golongan`, `nm_subgolongan`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `as_suplier`
+-- Table structure for table `as_suplier`
 --
 
 CREATE TABLE IF NOT EXISTS `as_suplier` (
@@ -585,7 +585,7 @@ CREATE TABLE IF NOT EXISTS `as_suplier` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `as_suplier`
+-- Dumping data for table `as_suplier`
 --
 
 INSERT INTO `as_suplier` (`kode_suplier`, `nm_suplier`, `alamat`, `kota`, `telepon`) VALUES
@@ -597,7 +597,7 @@ INSERT INTO `as_suplier` (`kode_suplier`, `nm_suplier`, `alamat`, `kota`, `telep
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `as_unit_kerja`
+-- Table structure for table `as_unit_kerja`
 --
 
 CREATE TABLE IF NOT EXISTS `as_unit_kerja` (
@@ -609,7 +609,7 @@ CREATE TABLE IF NOT EXISTS `as_unit_kerja` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `as_unit_kerja`
+-- Dumping data for table `as_unit_kerja`
 --
 
 INSERT INTO `as_unit_kerja` (`kode_unit`, `nm_unit`, `keterangan`, `user_posting`, `tgl_posting`) VALUES
@@ -621,7 +621,7 @@ INSERT INTO `as_unit_kerja` (`kode_unit`, `nm_unit`, `keterangan`, `user_posting
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `bahan`
+-- Table structure for table `bahan`
 --
 
 CREATE TABLE IF NOT EXISTS `bahan` (
@@ -633,7 +633,7 @@ CREATE TABLE IF NOT EXISTS `bahan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `bahan`
+-- Dumping data for table `bahan`
 --
 
 INSERT INTO `bahan` (`ID_BAHAN`, `NAMA_BAHAN`, `SATUAN`, `STOCK`, `STOCK_BAYANGAN`) VALUES
@@ -644,16 +644,19 @@ INSERT INTO `bahan` (`ID_BAHAN`, `NAMA_BAHAN`, `SATUAN`, `STOCK`, `STOCK_BAYANGA
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `barang_outlet`
+-- Table structure for table `barang_outlet`
 --
 
 CREATE TABLE IF NOT EXISTS `barang_outlet` (
   `KODE_BARANG` varchar(100) NOT NULL,
   `BARCODE` varchar(100) DEFAULT NULL,
   `NAMA_BARANG` varchar(100) NOT NULL,
+  `WARNA` varchar(100) DEFAULT NULL,
+  `UKURAN` varchar(50) DEFAULT NULL,
   `KETERANGAN` text,
   `HARGA_MODAL` int(11) NOT NULL,
   `HARGA_JUAL` int(11) NOT NULL,
+  `STOK_MINIMAL` int(11) DEFAULT NULL,
   `STOK` int(11) NOT NULL,
   `ID_KATEGORI` int(11) NOT NULL,
   `DISKON` int(11) NOT NULL,
@@ -662,77 +665,77 @@ CREATE TABLE IF NOT EXISTS `barang_outlet` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `barang_outlet`
+-- Dumping data for table `barang_outlet`
 --
 
-INSERT INTO `barang_outlet` (`KODE_BARANG`, `BARCODE`, `NAMA_BARANG`, `KETERANGAN`, `HARGA_MODAL`, `HARGA_JUAL`, `STOK`, `ID_KATEGORI`, `DISKON`, `ID_SATUAN`, `OUTLET`) VALUES
-('CSI.116.002.009', '51600209', 'TREKING FUTURA-BK-38', 'KET', 950000, 950000, 0, 5, 0, 1, 1),
-('CSI.116.002.010', '51600210', 'TREKING FUTURA-BK-39', 'KET', 950000, 950000, 0, 5, 0, 1, 1),
-('CSI.116.002.013', '51600213', 'TREKING FUTURA-BK-42', 'KET', 950000, 950000, 0, 5, 0, 1, 1),
-('CSI.116.002.014', '51600214', 'TREKING FUTURA-BK-43', 'KET', 950000, 950000, 0, 5, 0, 1, 1),
-('CSI.116.002.015', '51600215', 'TREKING FUTURA-BK-44', 'KET', 950000, 950000, 0, 5, 0, 1, 1),
-('CSI.116.001.001', '51600101', 'TREKKING EXPLORER-38', 'KET', 1700000, 1700000, 0, 5, 0, 1, 1),
-('CSI.116.001.002', '51600102', 'TREKKING EXPLORER-39', 'KET', 1700000, 1700000, 0, 5, 0, 1, 1),
-('CSI.116.001.003', '51600103', 'TREKKING EXPLORER-40', 'KET', 1700000, 1700000, 0, 5, 0, 1, 1),
-('CSI.116.001.004', '51600104', 'TREKKING EXPLORER-41', 'KET', 1700000, 1700000, 0, 5, 0, 1, 1),
-('CSI.116.001.005', '51600105', 'TREKKING EXPLORER-42', 'KET', 1700000, 1700000, 0, 5, 0, 1, 1),
-('CSI.116.001.006', '51600106', 'TREKKING EXPLORER-43', 'KET', 1700000, 1700000, 1, 5, 0, 1, 1),
-('CSI.116.001.007', '51600107', 'TREKKING EXPLORER-44', 'KET', 1700000, 1700000, 1, 5, 0, 1, 1),
-('CSI.116.002.001', '51600201', 'TREKING FUTURA-GY-38', 'KET', 950000, 950000, 2, 5, 0, 1, 1),
-('CSI.116.002.002', '51600202', 'TREKING FUTURA-GY-39', 'KET', 950000, 950000, 0, 5, 0, 1, 1),
-('CSI.116.002.003', '51600203', 'TREKING FUTURA-GY-40', 'KET', 950000, 950000, 2, 5, 0, 1, 1),
-('CSI.116.002.004', '51600204', 'TREKING FUTURA-GY-41', 'KET', 950000, 950000, 1, 5, 0, 1, 1),
-('CSI.116.002.005', '51600205', 'TREKING FUTURA-GY-42', 'KET', 950000, 950000, 1, 5, 0, 1, 1),
-('CSI.116.002.006', '51600206', 'TREKING FUTURA-GY-43', 'KET', 950000, 950000, 1, 5, 0, 1, 1),
-('CSI.116.002.007', '51600207', 'TREKING FUTURA-GY-44', 'KET', 950000, 950000, 0, 5, 0, 1, 1),
-('CSI.116.002.008', '51600208', 'TREKING FUTURA-GY-45', 'KET', 950000, 950000, 0, 5, 0, 1, 1),
-('CSI.116.003.001', '51600301', 'TREKKING TRANGO-38', 'KET', 1300000, 1300000, 0, 5, 0, 1, 1),
-('CSI.116.003.002', '51600302', 'TREKKING TRANGO-39', 'KET', 1300000, 1300000, 2, 5, 0, 1, 1),
-('CSI.116.003.003', '51600303', 'TREKKING TRANGO-40', 'KET', 1300000, 1300000, 2, 5, 0, 1, 1),
-('CSI.116.003.004', '51600304', 'TREKKING TRANGO-41', 'KET', 1300000, 1300000, 1, 5, 0, 1, 1),
-('CSI.116.003.005', '51600305', 'TREKKING TRANGO-42', 'KET', 1300000, 1300000, 0, 5, 0, 1, 1),
-('CSI.116.003.006', '51600306', 'TREKKING TRANGO-43', 'KET', 1300000, 1300000, 2, 5, 0, 1, 1),
-('CSI.116.003.007', '51600307', 'TREKKING TRANGO-44', 'KET', 1300000, 1300000, 2, 5, 0, 1, 1),
-('CSI.116.003.008', '51600308', 'TREKKING TRANGO-45', 'KET', 1300000, 1300000, 0, 5, 0, 1, 1),
-('BAG.003.033.002', '30303302', 'Car. Extraterres-BL', 'KET', 475000, 475000, 14, 3, 0, 1, 1),
-('BAG.003.033.001', '30303301', 'Car. Extraterres-GR', 'KET', 475000, 475000, 5, 3, 0, 1, 1),
-('ACF.010.002.001', '11000201-2', 'Jepit Tundra BK-38', 'KET', 90000, 90000, 0, 1, 0, 1, 1),
-('ACF.010.002.002', '11000202-2', 'Jepit Tundra BK-39', 'KET', 90000, 90000, 0, 1, 0, 1, 1),
-('ACF.010.002.003', '11000203-2', 'Jepit Tundra BK-40', 'KET', 90000, 90000, 27, 1, 0, 1, 1),
-('ACF.010.002.004', '11000204-2', 'Jepit Tundra BK-41', 'KET', 90000, 90000, 28, 1, 0, 1, 1),
-('ACF.010.002.005', '11000205-2', 'Jepit Tundra BK-42', 'KET', 90000, 90000, 3, 1, 0, 1, 1),
-('ACF.010.002.006', '11000206-2', 'Jepit Tundra BK-43', 'KET', 90000, 90000, 26, 1, 0, 1, 1),
-('ACF.010.047.005', '11004705', 'Yosemit Valley-GR-42', 'KET', 180000, 180000, 1, 1, 0, 1, 1),
-('ACF.010.047.002', '11004702', 'Yosemit Valley-GR-39', 'KET', 180000, 180000, 2, 1, 0, 1, 1),
-('ACF.010.047.003', '11004703', 'Yosemit Valley-GR-40', 'KET', 180000, 180000, 1, 1, 0, 1, 1),
-('ACF.010.047.010', '11004710', 'Yosemit Valley-RD-41', 'KET', 180000, 180000, 6, 1, 0, 1, 1),
-('ACF.010.047.011', '11004711', 'Yosemit Valley-RD-42', 'KET', 180000, 180000, 9, 1, 0, 1, 1),
-('ACF.010.047.006', '11004706', 'Yosemit Valley-GR-43', 'KET', 180000, 180000, 7, 1, 0, 1, 1),
-('ACF.010.040.022', '11004022', 'SM. Adventure-RD-41', 'KET', 195000, 195000, 1, 1, 0, 1, 1),
-('CSI.045.001.001', '54500101', 'CSN-HEFF', 'KET', 65000, 65000, 47, 5, 0, 1, 1),
-('ACF.018.002.001', '11800201', 'KAOS KAKI CONSINA 02', 'KET', 65000, 65000, 17, 1, 0, 1, 1),
-('ACT.007.004.002', '20700402-1', 'Cover 40-OR', 'KET', 60000, 60000, 5, 1, 0, 1, 1),
-('ACF.008.007.001', '8007001-2', 'SRT. Polar 01-RD', 'KET', 65000, 65000, 0, 1, 0, 1, 1),
-('CSI.129.001.001', '52900101', 'SRT. Iron Clad', 'KET', 185000, 185000, 2, 5, 0, 1, 1),
-('CSI.126.001.001', '52600101', 'SRT. Mont Bell 01', 'KET', 95000, 95000, 8, 5, 0, 1, 1),
-('CSI.126.002.001', '52600201', 'SRT. Mont Bell 02', 'KET', 185000, 185000, 2, 5, 0, 1, 1),
-('ACF.016.001.001', '11600101-1', 'Manset-BK-M', 'KET', 55000, 55000, 4, 1, 0, 1, 1),
-('ACF.016.001.002', '11600102-1', 'Manset-BK-L', 'KET', 55000, 55000, 1, 1, 0, 1, 1),
-('ACF.016.001.012', '11600112-1', 'Manset-RD-M', 'KET', 55000, 55000, 2, 1, 0, 1, 1),
-('ACF.016.001.010', '11600110-1', 'Manset-RD-S', 'KET', 55000, 55000, 5, 1, 0, 1, 1),
-('ACF.016.001.009', '11600109-1', 'Manset-BL-S', 'KET', 55000, 55000, 10, 1, 0, 1, 1),
-('8998127514123', '8998127514123', 'Dunhill Mild ', '', 15000, 19000, 97, 4, 0, 1, 5),
-('8992304015298', '8992304015298', 'Garnier Men Red', '', 19000, 22000, 143, 4, 0, 1, 5),
-('8886008101053', '8886008101053', 'Mineral Aqua ', '', 2500, 7500, 225, 4, 10, 1, 2),
-('8992761141059', '8992761141059', 'Fresh Tea 800Ml', '', 4500, 5400, 498, 4, 10, 1, 2),
-('8991002103238', '8991002103238', 'Good day capucino', '', 1500, 7500, 80, 4, 4, 1, 5),
-('6948375900423', '6948375900423', 'Laser Barcode scanner', '', 450000, 550000, 248, 4, 10, 1, 5),
-('8992806851899', '8992806851899', 'NEXCARE', '', 2500, 55000, 89, 4, 10, 1, 5);
+INSERT INTO `barang_outlet` (`KODE_BARANG`, `BARCODE`, `NAMA_BARANG`, `WARNA`, `UKURAN`, `KETERANGAN`, `HARGA_MODAL`, `HARGA_JUAL`, `STOK_MINIMAL`, `STOK`, `ID_KATEGORI`, `DISKON`, `ID_SATUAN`, `OUTLET`) VALUES
+('CSI.116.002.009', '51600209', 'TREKING FUTURA-BK-38', NULL, NULL, 'KET', 950000, 950000, NULL, 0, 5, 0, 1, 1),
+('CSI.116.002.010', '51600210', 'TREKING FUTURA-BK-39', NULL, NULL, 'KET', 950000, 950000, NULL, 0, 5, 0, 1, 1),
+('CSI.116.002.013', '51600213', 'TREKING FUTURA-BK-42', NULL, NULL, 'KET', 950000, 950000, NULL, 0, 5, 0, 1, 1),
+('CSI.116.002.014', '51600214', 'TREKING FUTURA-BK-43', NULL, NULL, 'KET', 950000, 950000, NULL, 0, 5, 0, 1, 1),
+('CSI.116.002.015', '51600215', 'TREKING FUTURA-BK-44', NULL, NULL, 'KET', 950000, 950000, NULL, 0, 5, 0, 1, 1),
+('CSI.116.001.001', '51600101', 'TREKKING EXPLORER-38', NULL, NULL, 'KET', 1700000, 1700000, NULL, 0, 5, 0, 1, 1),
+('CSI.116.001.002', '51600102', 'TREKKING EXPLORER-39', NULL, NULL, 'KET', 1700000, 1700000, NULL, 0, 5, 0, 1, 1),
+('CSI.116.001.003', '51600103', 'TREKKING EXPLORER-40', NULL, NULL, 'KET', 1700000, 1700000, NULL, 0, 5, 0, 1, 1),
+('CSI.116.001.004', '51600104', 'TREKKING EXPLORER-41', NULL, NULL, 'KET', 1700000, 1700000, NULL, 0, 5, 0, 1, 1),
+('CSI.116.001.005', '51600105', 'TREKKING EXPLORER-42', NULL, NULL, 'KET', 1700000, 1700000, NULL, 0, 5, 0, 1, 1),
+('CSI.116.001.006', '51600106', 'TREKKING EXPLORER-43', NULL, NULL, 'KET', 1700000, 1700000, NULL, 1, 5, 0, 1, 1),
+('CSI.116.001.007', '51600107', 'TREKKING EXPLORER-44', NULL, NULL, 'KET', 1700000, 1700000, NULL, 1, 5, 0, 1, 1),
+('CSI.116.002.001', '51600201', 'TREKING FUTURA-GY-38', NULL, NULL, 'KET', 950000, 950000, NULL, 2, 5, 0, 1, 1),
+('CSI.116.002.002', '51600202', 'TREKING FUTURA-GY-39', NULL, NULL, 'KET', 950000, 950000, NULL, 0, 5, 0, 1, 1),
+('CSI.116.002.003', '51600203', 'TREKING FUTURA-GY-40', NULL, NULL, 'KET', 950000, 950000, NULL, 2, 5, 0, 1, 1),
+('CSI.116.002.004', '51600204', 'TREKING FUTURA-GY-41', NULL, NULL, 'KET', 950000, 950000, NULL, 1, 5, 0, 1, 1),
+('CSI.116.002.005', '51600205', 'TREKING FUTURA-GY-42', NULL, NULL, 'KET', 950000, 950000, NULL, 1, 5, 0, 1, 1),
+('CSI.116.002.006', '51600206', 'TREKING FUTURA-GY-43', NULL, NULL, 'KET', 950000, 950000, NULL, 1, 5, 0, 1, 1),
+('CSI.116.002.007', '51600207', 'TREKING FUTURA-GY-44', NULL, NULL, 'KET', 950000, 950000, NULL, 0, 5, 0, 1, 1),
+('CSI.116.002.008', '51600208', 'TREKING FUTURA-GY-45', NULL, NULL, 'KET', 950000, 950000, NULL, 0, 5, 0, 1, 1),
+('CSI.116.003.001', '51600301', 'TREKKING TRANGO-38', NULL, NULL, 'KET', 1300000, 1300000, NULL, 0, 5, 0, 1, 1),
+('CSI.116.003.002', '51600302', 'TREKKING TRANGO-39', NULL, NULL, 'KET', 1300000, 1300000, NULL, 2, 5, 0, 1, 1),
+('CSI.116.003.003', '51600303', 'TREKKING TRANGO-40', NULL, NULL, 'KET', 1300000, 1300000, NULL, 2, 5, 0, 1, 1),
+('CSI.116.003.004', '51600304', 'TREKKING TRANGO-41', NULL, NULL, 'KET', 1300000, 1300000, NULL, 1, 5, 0, 1, 1),
+('CSI.116.003.005', '51600305', 'TREKKING TRANGO-42', NULL, NULL, 'KET', 1300000, 1300000, NULL, 0, 5, 0, 1, 1),
+('CSI.116.003.006', '51600306', 'TREKKING TRANGO-43', NULL, NULL, 'KET', 1300000, 1300000, NULL, 2, 5, 0, 1, 1),
+('CSI.116.003.007', '51600307', 'TREKKING TRANGO-44', NULL, NULL, 'KET', 1300000, 1300000, NULL, 2, 5, 0, 1, 1),
+('CSI.116.003.008', '51600308', 'TREKKING TRANGO-45', NULL, NULL, 'KET', 1300000, 1300000, NULL, 0, 5, 0, 1, 1),
+('BAG.003.033.002', '30303302', 'Car. Extraterres-BL', NULL, NULL, 'KET', 475000, 475000, NULL, 14, 3, 0, 1, 1),
+('BAG.003.033.001', '30303301', 'Car. Extraterres-GR', NULL, NULL, 'KET', 475000, 475000, NULL, 5, 3, 0, 1, 1),
+('ACF.010.002.001', '11000201-2', 'Jepit Tundra BK-38', NULL, NULL, 'KET', 90000, 90000, NULL, 0, 1, 0, 1, 1),
+('ACF.010.002.002', '11000202-2', 'Jepit Tundra BK-39', NULL, NULL, 'KET', 90000, 90000, NULL, 0, 1, 0, 1, 1),
+('ACF.010.002.003', '11000203-2', 'Jepit Tundra BK-40', NULL, NULL, 'KET', 90000, 90000, NULL, 27, 1, 0, 1, 1),
+('ACF.010.002.004', '11000204-2', 'Jepit Tundra BK-41', NULL, NULL, 'KET', 90000, 90000, NULL, 28, 1, 0, 1, 1),
+('ACF.010.002.005', '11000205-2', 'Jepit Tundra BK-42', NULL, NULL, 'KET', 90000, 90000, NULL, 3, 1, 0, 1, 1),
+('ACF.010.002.006', '11000206-2', 'Jepit Tundra BK-43', NULL, NULL, 'KET', 90000, 90000, NULL, 26, 1, 0, 1, 1),
+('ACF.010.047.005', '11004705', 'Yosemit Valley-GR-42', NULL, NULL, 'KET', 180000, 180000, NULL, 1, 1, 0, 1, 1),
+('ACF.010.047.002', '11004702', 'Yosemit Valley-GR-39', NULL, NULL, 'KET', 180000, 180000, NULL, 2, 1, 0, 1, 1),
+('ACF.010.047.003', '11004703', 'Yosemit Valley-GR-40', NULL, NULL, 'KET', 180000, 180000, NULL, 1, 1, 0, 1, 1),
+('ACF.010.047.010', '11004710', 'Yosemit Valley-RD-41', NULL, NULL, 'KET', 180000, 180000, NULL, 6, 1, 0, 1, 1),
+('ACF.010.047.011', '11004711', 'Yosemit Valley-RD-42', NULL, NULL, 'KET', 180000, 180000, NULL, 9, 1, 0, 1, 1),
+('ACF.010.047.006', '11004706', 'Yosemit Valley-GR-43', NULL, NULL, 'KET', 180000, 180000, NULL, 7, 1, 0, 1, 1),
+('ACF.010.040.022', '11004022', 'SM. Adventure-RD-41', NULL, NULL, 'KET', 195000, 195000, NULL, 1, 1, 0, 1, 1),
+('CSI.045.001.001', '54500101', 'CSN-HEFF', NULL, NULL, 'KET', 65000, 65000, NULL, 47, 5, 0, 1, 1),
+('ACF.018.002.001', '11800201', 'KAOS KAKI CONSINA 02', NULL, NULL, 'KET', 65000, 65000, NULL, 17, 1, 0, 1, 1),
+('ACT.007.004.002', '20700402-1', 'Cover 40-OR', NULL, NULL, 'KET', 60000, 60000, NULL, 5, 1, 0, 1, 1),
+('ACF.008.007.001', '8007001-2', 'SRT. Polar 01-RD', 'Coba', 'Coba gi', 'KET', 65000, 65000, 0, 0, 1, 0, 1, 1),
+('CSI.129.001.001', '52900101', 'SRT. Iron Clad', NULL, NULL, 'KET', 185000, 185000, NULL, 2, 5, 0, 1, 1),
+('CSI.126.001.001', '52600101', 'SRT. Mont Bell 01', NULL, NULL, 'KET', 95000, 95000, NULL, 8, 5, 0, 1, 1),
+('CSI.126.002.001', '52600201', 'SRT. Mont Bell 02', NULL, NULL, 'KET', 185000, 185000, NULL, 2, 5, 0, 1, 1),
+('ACF.016.001.001', '11600101-1', 'Manset-BK-M', NULL, NULL, 'KET', 55000, 55000, NULL, 4, 1, 0, 1, 1),
+('ACF.016.001.002', '11600102-1', 'Manset-BK-L', NULL, NULL, 'KET', 55000, 55000, NULL, 1, 1, 0, 1, 1),
+('ACF.016.001.012', '11600112-1', 'Manset-RD-M', NULL, NULL, 'KET', 55000, 55000, NULL, 2, 1, 0, 1, 1),
+('ACF.016.001.010', '11600110-1', 'Manset-RD-S', NULL, NULL, 'KET', 55000, 55000, NULL, 5, 1, 0, 1, 1),
+('ACF.016.001.009', '11600109-1', 'Manset-BL-S', NULL, NULL, 'KET', 55000, 55000, NULL, 10, 1, 0, 1, 1),
+('8998127514123', '8998127514123', 'Dunhill Mild ', NULL, NULL, '', 15000, 19000, NULL, 97, 4, 0, 1, 5),
+('8992304015298', '8992304015298', 'Garnier Men Red', NULL, NULL, '', 19000, 22000, NULL, 143, 4, 0, 1, 5),
+('8886008101053', '8886008101053', 'Mineral Aqua ', NULL, NULL, '', 2500, 7500, NULL, 225, 4, 10, 1, 2),
+('8992761141059', '8992761141059', 'Fresh Tea 800Ml', NULL, NULL, '', 4500, 5400, NULL, 498, 4, 10, 1, 2),
+('8991002103238', '8991002103238', 'Good day capucino', NULL, NULL, '', 1500, 7500, NULL, 80, 4, 4, 1, 5),
+('6948375900423', '6948375900423', 'Laser Barcode scanner', NULL, NULL, '', 450000, 550000, NULL, 248, 4, 10, 1, 5),
+('8992806851899', '8992806851899', 'NEXCARE', NULL, NULL, '', 2500, 55000, NULL, 89, 4, 10, 1, 5);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `barang_pusat`
+-- Table structure for table `barang_pusat`
 --
 
 CREATE TABLE IF NOT EXISTS `barang_pusat` (
@@ -740,9 +743,12 @@ CREATE TABLE IF NOT EXISTS `barang_pusat` (
   `KODE_BARANG` varchar(100) NOT NULL,
   `BARCODE` varchar(100) DEFAULT NULL,
   `NAMA_BARANG` varchar(100) NOT NULL,
+  `WARNA` varchar(100) DEFAULT NULL,
+  `UKURAN` varchar(50) DEFAULT NULL,
   `KETERANGAN` text,
   `HARGA_MODAL` int(11) NOT NULL,
   `HARGA_JUAL` int(11) NOT NULL,
+  `STOK_MINIMAL` int(11) DEFAULT NULL,
   `STOK` int(11) NOT NULL,
   `ID_KATEGORI` int(11) NOT NULL,
   `DISKON` int(11) NOT NULL,
@@ -750,72 +756,72 @@ CREATE TABLE IF NOT EXISTS `barang_pusat` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16302 ;
 
 --
--- Dumping data untuk tabel `barang_pusat`
+-- Dumping data for table `barang_pusat`
 --
 
-INSERT INTO `barang_pusat` (`ID_BARANG`, `KODE_BARANG`, `BARCODE`, `NAMA_BARANG`, `KETERANGAN`, `HARGA_MODAL`, `HARGA_JUAL`, `STOK`, `ID_KATEGORI`, `DISKON`, `ID_SATUAN`) VALUES
-(16245, 'CSI.116.002.009', '51600209', 'TREKING FUTURA-BK-38', 'KET', 950000, 950000, 1, 5, 0, 1),
-(16246, 'CSI.116.002.010', '51600210', 'TREKING FUTURA-BK-39', 'KET', 950000, 950000, 2, 5, 0, 1),
-(16247, 'CSI.116.002.013', '51600213', 'TREKING FUTURA-BK-42', 'KET', 950000, 950000, 2, 5, 0, 1),
-(16248, 'CSI.116.002.014', '51600214', 'TREKING FUTURA-BK-43', 'KET', 950000, 950000, 1, 5, 0, 1),
-(16249, 'CSI.116.002.015', '51600215', 'TREKING FUTURA-BK-44', 'KET', 950000, 950000, 2, 5, 0, 1),
-(16250, 'CSI.116.001.001', '51600101', 'TREKKING EXPLORER-38', 'KET', 1700000, 1700000, 1, 5, 0, 1),
-(16251, 'CSI.116.001.002', '51600102', 'TREKKING EXPLORER-39', 'KET', 1700000, 1700000, 1, 5, 0, 1),
-(16252, 'CSI.116.001.003', '51600103', 'TREKKING EXPLORER-40', 'KET', 1700000, 1700000, 1, 5, 0, 1),
-(16253, 'CSI.116.001.004', '51600104', 'TREKKING EXPLORER-41', 'KET', 1700000, 1700000, 0, 5, 0, 1),
-(16254, 'CSI.116.001.005', '51600105', 'TREKKING EXPLORER-42', 'KET', 1700000, 1700000, 2, 5, 0, 1),
-(16255, 'CSI.116.001.006', '51600106', 'TREKKING EXPLORER-43', 'KET', 1700000, 1700000, 1, 5, 0, 1),
-(16256, 'CSI.116.001.007', '51600107', 'TREKKING EXPLORER-44', 'KET', 1700000, 1700000, 1, 5, 0, 1),
-(16257, 'CSI.116.002.001', '51600201', 'TREKING FUTURA-GY-38', 'KET', 950000, 950000, 2, 5, 0, 1),
-(16258, 'CSI.116.002.002', '51600202', 'TREKING FUTURA-GY-39', 'KET', 950000, 950000, 0, 5, 0, 1),
-(16259, 'CSI.116.002.003', '51600203', 'TREKING FUTURA-GY-40', 'KET', 950000, 950000, 3, 5, 0, 1),
-(16260, 'CSI.116.002.004', '51600204', 'TREKING FUTURA-GY-41', 'KET', 950000, 950000, 1, 5, 0, 1),
-(16261, 'CSI.116.002.005', '51600205', 'TREKING FUTURA-GY-42', 'KET', 950000, 950000, 1, 5, 0, 1),
-(16262, 'CSI.116.002.006', '51600206', 'TREKING FUTURA-GY-43', 'KET', 950000, 950000, 2, 5, 0, 1),
-(16263, 'CSI.116.002.007', '51600207', 'TREKING FUTURA-GY-44', 'KET', 950000, 950000, 1, 5, 0, 1),
-(16264, 'CSI.116.002.008', '51600208', 'TREKING FUTURA-GY-45', 'KET', 950000, 950000, 0, 5, 0, 1),
-(16265, 'CSI.116.003.001', '51600301', 'TREKKING TRANGO-38', 'KET', 1300000, 1300000, 0, 5, 0, 1),
-(16266, 'CSI.116.003.002', '51600302', 'TREKKING TRANGO-39', 'KET', 1300000, 1300000, 2, 5, 0, 1),
-(16267, 'CSI.116.003.003', '51600303', 'TREKKING TRANGO-40', 'KET', 1300000, 1300000, 2, 5, 0, 1),
-(16268, 'CSI.116.003.004', '51600304', 'TREKKING TRANGO-41', 'KET', 1300000, 1300000, 1, 5, 0, 1),
-(16269, 'CSI.116.003.005', '51600305', 'TREKKING TRANGO-42', 'KET', 1300000, 1300000, 0, 5, 0, 1),
-(16270, 'CSI.116.003.006', '51600306', 'TREKKING TRANGO-43', 'KET', 1300000, 1300000, 2, 5, 0, 1),
-(16271, 'CSI.116.003.007', '51600307', 'TREKKING TRANGO-44', 'KET', 1300000, 1300000, 2, 5, 0, 1),
-(16272, 'CSI.116.003.008', '51600308', 'TREKKING TRANGO-45', 'KET', 1300000, 1300000, 0, 5, 0, 1),
-(16273, 'BAG.003.033.002', '30303302', 'Car. Extraterres-BL', 'KET', 475000, 475000, 15, 3, 0, 1),
-(16274, 'BAG.003.033.001', '30303301', 'Car. Extraterres-GR', 'KET', 475000, 475000, 5, 3, 0, 1),
-(16275, 'ACF.010.002.001', '11000201-2', 'Jepit Tundra BK-38', 'KET', 90000, 90000, 0, 1, 0, 1),
-(16276, 'ACF.010.002.002', '11000202-2', 'Jepit Tundra BK-39', 'KET', 90000, 90000, 0, 1, 0, 1),
-(16277, 'ACF.010.002.003', '11000203-2', 'Jepit Tundra BK-40', 'KET', 90000, 90000, 30, 1, 0, 1),
-(16278, 'ACF.010.002.004', '11000204-2', 'Jepit Tundra BK-41', 'KET', 90000, 90000, 30, 1, 0, 1),
-(16279, 'ACF.010.002.005', '11000205-2', 'Jepit Tundra BK-42', 'KET', 90000, 90000, 5, 1, 0, 1),
-(16280, 'ACF.010.002.006', '11000206-2', 'Jepit Tundra BK-43', 'KET', 90000, 90000, 28, 1, 0, 1),
-(16281, 'ACF.010.047.005', '11004705', 'Yosemit Valley-GR-42', 'KET', 180000, 180000, 1, 1, 0, 1),
-(16282, 'ACF.010.047.002', '11004702', 'Yosemit Valley-GR-39', 'KET', 180000, 180000, 4, 1, 0, 1),
-(16283, 'ACF.010.047.003', '11004703', 'Yosemit Valley-GR-40', 'KET', 180000, 180000, 1, 1, 0, 1),
-(16284, 'ACF.010.047.010', '11004710', 'Yosemit Valley-RD-41', 'KET', 180000, 180000, 6, 1, 0, 1),
-(16285, 'ACF.010.047.011', '11004711', 'Yosemit Valley-RD-42', 'KET', 180000, 180000, 9, 1, 0, 1),
-(16286, 'ACF.010.047.006', '11004706', 'Yosemit Valley-GR-43', 'KET', 180000, 180000, 7, 1, 0, 1),
-(16287, 'ACF.010.040.022', '11004022', 'SM. Adventure-RD-41', 'KET', 195000, 195000, 1, 1, 0, 1),
-(16288, 'CSI.045.001.001', '54500101', 'CSN-HEFF', 'KET', 65000, 65000, 47, 5, 0, 1),
-(16289, 'ACF.018.002.001', '11800201', 'KAOS KAKI CONSINA 02', 'KET', 65000, 65000, 17, 1, 0, 1),
-(16290, 'ACT.007.004.002', '20700402-1', 'Cover 40-OR', 'KET', 60000, 60000, 5, 1, 0, 1),
-(16291, 'ACF.008.007.001', '8007001-2', 'SRT. Polar 01-RD', 'KET', 65000, 65000, 1, 1, 0, 1),
-(16292, 'CSI.129.001.001', '52900101', 'SRT. Iron Clad', 'KET', 185000, 185000, 2, 5, 0, 1),
-(16293, 'CSI.126.001.001', '52600101', 'SRT. Mont Bell 01', 'KET', 95000, 95000, 8, 5, 0, 1),
-(16294, 'CSI.126.002.001', '52600201', 'SRT. Mont Bell 02', 'KET', 185000, 185000, 2, 5, 0, 1),
-(16295, 'ACF.016.001.001', '11600101-1', 'Manset-BK-M', 'KET', 55000, 55000, 4, 1, 0, 1),
-(16296, 'ACF.016.001.002', '11600102-1', 'Manset-BK-L', 'KET', 55000, 55000, 1, 1, 0, 1),
-(16297, 'ACF.016.001.012', '11600112-1', 'Manset-RD-M', 'KET', 55000, 55000, 2, 1, 0, 1),
-(16298, 'ACF.016.001.010', '11600110-1', 'Manset-RD-S', 'KET', 55000, 55000, 1, 1, 0, 1),
-(16299, 'ACF.016.001.009', '11600109-1', 'Manset-BL-S', 'KET', 55000, 55000, 5, 1, 0, 1),
-(16300, 'KSY.005.072.001', '51600209', 'COBA', 'KET', 950000, 950000, 1, 5, 0, 1),
-(16301, 'KSY.005.140.001', '51600101', 'Coba Lagi', 'KET', 1700000, 1700000, 1, 5, 0, 1);
+INSERT INTO `barang_pusat` (`ID_BARANG`, `KODE_BARANG`, `BARCODE`, `NAMA_BARANG`, `WARNA`, `UKURAN`, `KETERANGAN`, `HARGA_MODAL`, `HARGA_JUAL`, `STOK_MINIMAL`, `STOK`, `ID_KATEGORI`, `DISKON`, `ID_SATUAN`) VALUES
+(16245, 'CSI.116.002.009', '51600209', 'TREKING FUTURA-BK-38', 'Merah', 'S', 'KET', 950000, 950000, NULL, 1, 5, 0, 1),
+(16246, 'CSI.116.002.010', '51600210', 'TREKING FUTURA-BK-39', '', '', 'KET', 950000, 950000, NULL, 2, 5, 0, 1),
+(16247, 'CSI.116.002.013', '51600213', 'TREKING FUTURA-BK-42', '', '', 'KET', 950000, 950000, NULL, 2, 5, 0, 1),
+(16248, 'CSI.116.002.014', '51600214', 'TREKING FUTURA-BK-43', '', '', 'KET', 950000, 950000, NULL, 1, 5, 0, 1),
+(16249, 'CSI.116.002.015', '51600215', 'TREKING FUTURA-BK-44', '', '', 'KET', 950000, 950000, NULL, 2, 5, 0, 1),
+(16250, 'CSI.116.001.001', '51600101', 'TREKKING EXPLORER-38', '', '', 'KET', 1700000, 1700000, NULL, 1, 5, 0, 1),
+(16251, 'CSI.116.001.002', '51600102', 'TREKKING EXPLORER-39', '', '', 'KET', 1700000, 1700000, NULL, 1, 5, 0, 1),
+(16252, 'CSI.116.001.003', '51600103', 'TREKKING EXPLORER-40', '', '', 'KET', 1700000, 1700000, NULL, 1, 5, 0, 1),
+(16253, 'CSI.116.001.004', '51600104', 'TREKKING EXPLORER-41', '', '', 'KET', 1700000, 1700000, NULL, 0, 5, 0, 1),
+(16254, 'CSI.116.001.005', '51600105', 'TREKKING EXPLORER-42', '', '', 'KET', 1700000, 1700000, NULL, 2, 5, 0, 1),
+(16255, 'CSI.116.001.006', '51600106', 'TREKKING EXPLORER-43', '', '', 'KET', 1700000, 1700000, NULL, 1, 5, 0, 1),
+(16256, 'CSI.116.001.007', '51600107', 'TREKKING EXPLORER-44', '', '', 'KET', 1700000, 1700000, NULL, 1, 5, 0, 1),
+(16257, 'CSI.116.002.001', '51600201', 'TREKING FUTURA-GY-38', '', '', 'KET', 950000, 950000, NULL, 2, 5, 0, 1),
+(16258, 'CSI.116.002.002', '51600202', 'TREKING FUTURA-GY-39', '', '', 'KET', 950000, 950000, NULL, 0, 5, 0, 1),
+(16259, 'CSI.116.002.003', '51600203', 'TREKING FUTURA-GY-40', '', '', 'KET', 950000, 950000, NULL, 3, 5, 0, 1),
+(16260, 'CSI.116.002.004', '51600204', 'TREKING FUTURA-GY-41', '', '', 'KET', 950000, 950000, NULL, 1, 5, 0, 1),
+(16261, 'CSI.116.002.005', '51600205', 'TREKING FUTURA-GY-42', '', '', 'KET', 950000, 950000, NULL, 1, 5, 0, 1),
+(16262, 'CSI.116.002.006', '51600206', 'TREKING FUTURA-GY-43', '', '', 'KET', 950000, 950000, NULL, 2, 5, 0, 1),
+(16263, 'CSI.116.002.007', '51600207', 'TREKING FUTURA-GY-44', '', '', 'KET', 950000, 950000, NULL, 1, 5, 0, 1),
+(16264, 'CSI.116.002.008', '51600208', 'TREKING FUTURA-GY-45', '', '', 'KET', 950000, 950000, NULL, 0, 5, 0, 1),
+(16265, 'CSI.116.003.001', '51600301', 'TREKKING TRANGO-38', '', '', 'KET', 1300000, 1300000, NULL, 0, 5, 0, 1),
+(16266, 'CSI.116.003.002', '51600302', 'TREKKING TRANGO-39', '', '', 'KET', 1300000, 1300000, NULL, 2, 5, 0, 1),
+(16267, 'CSI.116.003.003', '51600303', 'TREKKING TRANGO-40', '', '', 'KET', 1300000, 1300000, NULL, 2, 5, 0, 1),
+(16268, 'CSI.116.003.004', '51600304', 'TREKKING TRANGO-41', '', '', 'KET', 1300000, 1300000, NULL, 1, 5, 0, 1),
+(16269, 'CSI.116.003.005', '51600305', 'TREKKING TRANGO-42', '', '', 'KET', 1300000, 1300000, NULL, 0, 5, 0, 1),
+(16270, 'CSI.116.003.006', '51600306', 'TREKKING TRANGO-43', '', '', 'KET', 1300000, 1300000, NULL, 2, 5, 0, 1),
+(16271, 'CSI.116.003.007', '51600307', 'TREKKING TRANGO-44', '', '', 'KET', 1300000, 1300000, NULL, 2, 5, 0, 1),
+(16272, 'CSI.116.003.008', '51600308', 'TREKKING TRANGO-45', '', '', 'KET', 1300000, 1300000, NULL, 0, 5, 0, 1),
+(16273, 'BAG.003.033.002', '30303302', 'Car. Extraterres-BL', '', '', 'KET', 475000, 475000, NULL, 15, 3, 0, 1),
+(16274, 'BAG.003.033.001', '30303301', 'Car. Extraterres-GR', '', '', 'KET', 475000, 475000, NULL, 5, 3, 0, 1),
+(16275, 'ACF.010.002.001', '11000201-2', 'Jepit Tundra BK-38', '', '', 'KET', 90000, 90000, NULL, 0, 1, 0, 1),
+(16276, 'ACF.010.002.002', '11000202-2', 'Jepit Tundra BK-39', '', '', 'KET', 90000, 90000, NULL, 0, 1, 0, 1),
+(16277, 'ACF.010.002.003', '11000203-2', 'Jepit Tundra BK-40', '', '', 'KET', 90000, 90000, NULL, 30, 1, 0, 1),
+(16278, 'ACF.010.002.004', '11000204-2', 'Jepit Tundra BK-41', '', '', 'KET', 90000, 90000, NULL, 30, 1, 0, 1),
+(16279, 'ACF.010.002.005', '11000205-2', 'Jepit Tundra BK-42', '', '', 'KET', 90000, 90000, NULL, 5, 1, 0, 1),
+(16280, 'ACF.010.002.006', '11000206-2', 'Jepit Tundra BK-43', '', '', 'KET', 90000, 90000, NULL, 28, 1, 0, 1),
+(16281, 'ACF.010.047.005', '11004705', 'Yosemit Valley-GR-42', '', '', 'KET', 180000, 180000, NULL, 1, 1, 0, 1),
+(16282, 'ACF.010.047.002', '11004702', 'Yosemit Valley-GR-39', '', '', 'KET', 180000, 180000, NULL, 4, 1, 0, 1),
+(16283, 'ACF.010.047.003', '11004703', 'Yosemit Valley-GR-40', '', '', 'KET', 180000, 180000, NULL, 1, 1, 0, 1),
+(16284, 'ACF.010.047.010', '11004710', 'Yosemit Valley-RD-41', '', '', 'KET', 180000, 180000, NULL, 6, 1, 0, 1),
+(16285, 'ACF.010.047.011', '11004711', 'Yosemit Valley-RD-42', '', '', 'KET', 180000, 180000, NULL, 9, 1, 0, 1),
+(16286, 'ACF.010.047.006', '11004706', 'Yosemit Valley-GR-43', '', '', 'KET', 180000, 180000, NULL, 7, 1, 0, 1),
+(16287, 'ACF.010.040.022', '11004022', 'SM. Adventure-RD-41', '', '', 'KET', 195000, 195000, NULL, 1, 1, 0, 1),
+(16288, 'CSI.045.001.001', '54500101', 'CSN-HEFF', '', '', 'KET', 65000, 65000, NULL, 47, 5, 0, 1),
+(16289, 'ACF.018.002.001', '11800201', 'KAOS KAKI CONSINA 02', '', '', 'KET', 65000, 65000, NULL, 17, 1, 0, 1),
+(16290, 'ACT.007.004.002', '20700402-1', 'Cover 40-OR', '', '', 'KET', 60000, 60000, NULL, 5, 1, 0, 1),
+(16291, 'ACF.008.007.001', '8007001-2', 'SRT. Polar 01-RD', '', '', 'KET', 65000, 65000, NULL, 1, 1, 0, 1),
+(16292, 'CSI.129.001.001', '52900101', 'SRT. Iron Clad', '', '', 'KET', 185000, 185000, NULL, 2, 5, 0, 1),
+(16293, 'CSI.126.001.001', '52600101', 'SRT. Mont Bell 01', '', '', 'KET', 95000, 95000, NULL, 8, 5, 0, 1),
+(16294, 'CSI.126.002.001', '52600201', 'SRT. Mont Bell 02', '', '', 'KET', 185000, 185000, NULL, 2, 5, 0, 1),
+(16295, 'ACF.016.001.001', '11600101-1', 'Manset-BK-M', '', '', 'KET', 55000, 55000, NULL, 4, 1, 0, 1),
+(16296, 'ACF.016.001.002', '11600102-1', 'Manset-BK-L', '', '', 'KET', 55000, 55000, NULL, 1, 1, 0, 1),
+(16297, 'ACF.016.001.012', '11600112-1', 'Manset-RD-M', '', '', 'KET', 55000, 55000, NULL, 2, 1, 0, 1),
+(16298, 'ACF.016.001.010', '11600110-1', 'Manset-RD-S', '', '', 'KET', 55000, 55000, NULL, 1, 1, 0, 1),
+(16299, 'ACF.016.001.009', '11600109-1', 'Manset-BL-S', '', '', 'KET', 55000, 55000, NULL, 5, 1, 0, 1),
+(16300, 'KSY.005.072.001', '51600209', 'COBA', '', '', 'KET', 950000, 950000, NULL, 1, 5, 0, 1),
+(16301, 'KSY.005.140.001', '51600101', 'Coba Lagi', '', '', 'KET', 1700000, 1700000, NULL, 1, 5, 0, 1);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `cetak_barcode`
+-- Table structure for table `cetak_barcode`
 --
 
 CREATE TABLE IF NOT EXISTS `cetak_barcode` (
@@ -826,7 +832,7 @@ CREATE TABLE IF NOT EXISTS `cetak_barcode` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Dumping data untuk tabel `cetak_barcode`
+-- Dumping data for table `cetak_barcode`
 --
 
 INSERT INTO `cetak_barcode` (`ID`, `BARCODE`, `LEBAR`, `TINGGI`) VALUES
@@ -835,7 +841,7 @@ INSERT INTO `cetak_barcode` (`ID`, `BARCODE`, `LEBAR`, `TINGGI`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_bhn_masuk`
+-- Table structure for table `detail_bhn_masuk`
 --
 
 CREATE TABLE IF NOT EXISTS `detail_bhn_masuk` (
@@ -851,7 +857,7 @@ CREATE TABLE IF NOT EXISTS `detail_bhn_masuk` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
--- Dumping data untuk tabel `detail_bhn_masuk`
+-- Dumping data for table `detail_bhn_masuk`
 --
 
 INSERT INTO `detail_bhn_masuk` (`URUT`, `DET_ID_BHN_MASUK`, `DET_ID_BAHAN`, `HARGA_BAHAN`, `JUMLAH_BAHAN`, `JUMLAH_MASUK`, `JUMLAH_SELISIH`, `HARGA_SELISIH`, `KERUGIAN`) VALUES
@@ -864,7 +870,7 @@ INSERT INTO `detail_bhn_masuk` (`URUT`, `DET_ID_BHN_MASUK`, `DET_ID_BAHAN`, `HAR
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_item_transfer`
+-- Table structure for table `detail_item_transfer`
 --
 
 CREATE TABLE IF NOT EXISTS `detail_item_transfer` (
@@ -880,7 +886,7 @@ CREATE TABLE IF NOT EXISTS `detail_item_transfer` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_kalkulasi_angsur`
+-- Table structure for table `detail_kalkulasi_angsur`
 --
 
 CREATE TABLE IF NOT EXISTS `detail_kalkulasi_angsur` (
@@ -893,7 +899,7 @@ CREATE TABLE IF NOT EXISTS `detail_kalkulasi_angsur` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `detail_kalkulasi_angsur`
+-- Dumping data for table `detail_kalkulasi_angsur`
 --
 
 INSERT INTO `detail_kalkulasi_angsur` (`ANGSUR`, `TANGGAL`, `ID_PETUGAS`, `JUMLAH_ANGSUR`, `ANGSUR_KE`, `ID_KALKULASI`) VALUES
@@ -916,7 +922,7 @@ INSERT INTO `detail_kalkulasi_angsur` (`ANGSUR`, `TANGGAL`, `ID_PETUGAS`, `JUMLA
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_kalkulasi_bahan`
+-- Table structure for table `detail_kalkulasi_bahan`
 --
 
 CREATE TABLE IF NOT EXISTS `detail_kalkulasi_bahan` (
@@ -932,7 +938,7 @@ CREATE TABLE IF NOT EXISTS `detail_kalkulasi_bahan` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=55 ;
 
 --
--- Dumping data untuk tabel `detail_kalkulasi_bahan`
+-- Dumping data for table `detail_kalkulasi_bahan`
 --
 
 INSERT INTO `detail_kalkulasi_bahan` (`URUT`, `ID_KALKULASI`, `ID_BAHAN`, `JML_TOTAL`, `JML_DIPAKAI`, `JML_FINAL`, `JML_LEBIH`, `ANGSUR`, `JML_ANGSURAN`) VALUES
@@ -949,7 +955,7 @@ INSERT INTO `detail_kalkulasi_bahan` (`URUT`, `ID_KALKULASI`, `ID_BAHAN`, `JML_T
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_kalkulasi_barang`
+-- Table structure for table `detail_kalkulasi_barang`
 --
 
 CREATE TABLE IF NOT EXISTS `detail_kalkulasi_barang` (
@@ -961,7 +967,7 @@ CREATE TABLE IF NOT EXISTS `detail_kalkulasi_barang` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=37 ;
 
 --
--- Dumping data untuk tabel `detail_kalkulasi_barang`
+-- Dumping data for table `detail_kalkulasi_barang`
 --
 
 INSERT INTO `detail_kalkulasi_barang` (`URUT`, `ID_KALKULASI`, `KODE_BARANG`, `JML_PROD`, `JML_PROD_FINAL`) VALUES
@@ -975,7 +981,7 @@ INSERT INTO `detail_kalkulasi_barang` (`URUT`, `ID_KALKULASI`, `KODE_BARANG`, `J
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_kalkulasi_penyesuaian`
+-- Table structure for table `detail_kalkulasi_penyesuaian`
 --
 
 CREATE TABLE IF NOT EXISTS `detail_kalkulasi_penyesuaian` (
@@ -987,7 +993,7 @@ CREATE TABLE IF NOT EXISTS `detail_kalkulasi_penyesuaian` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `detail_kalkulasi_penyesuaian`
+-- Dumping data for table `detail_kalkulasi_penyesuaian`
 --
 
 INSERT INTO `detail_kalkulasi_penyesuaian` (`PENYESUAIAN`, `TANGGAL`, `ID_PETUGAS`, `JUMLAH_PENYESUAIAN`, `ID_KALKULASI`) VALUES
@@ -998,7 +1004,7 @@ INSERT INTO `detail_kalkulasi_penyesuaian` (`PENYESUAIAN`, `TANGGAL`, `ID_PETUGA
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_konsinyasi`
+-- Table structure for table `detail_konsinyasi`
 --
 
 CREATE TABLE IF NOT EXISTS `detail_konsinyasi` (
@@ -1012,7 +1018,7 @@ CREATE TABLE IF NOT EXISTS `detail_konsinyasi` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
--- Dumping data untuk tabel `detail_konsinyasi`
+-- Dumping data for table `detail_konsinyasi`
 --
 
 INSERT INTO `detail_konsinyasi` (`ID_DETAIL_KONSINYASI`, `NO_NOTA_KONSINYASI`, `KODE_BARANG`, `HARGA_BARANG`, `DISKON`, `JUMLAH`, `GRAND_PRICE`) VALUES
@@ -1022,7 +1028,7 @@ INSERT INTO `detail_konsinyasi` (`ID_DETAIL_KONSINYASI`, `NO_NOTA_KONSINYASI`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_manufacturing`
+-- Table structure for table `detail_manufacturing`
 --
 
 CREATE TABLE IF NOT EXISTS `detail_manufacturing` (
@@ -1033,7 +1039,7 @@ CREATE TABLE IF NOT EXISTS `detail_manufacturing` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
--- Dumping data untuk tabel `detail_manufacturing`
+-- Dumping data for table `detail_manufacturing`
 --
 
 INSERT INTO `detail_manufacturing` (`URUT`, `DET_MAN_ID_MAN`, `DET_ID_BAHAN`, `DET_JUMLAH_BAHAN`) VALUES
@@ -1046,7 +1052,7 @@ INSERT INTO `detail_manufacturing` (`URUT`, `DET_MAN_ID_MAN`, `DET_ID_BAHAN`, `D
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_mutasi_prod`
+-- Table structure for table `detail_mutasi_prod`
 --
 
 CREATE TABLE IF NOT EXISTS `detail_mutasi_prod` (
@@ -1056,7 +1062,7 @@ CREATE TABLE IF NOT EXISTS `detail_mutasi_prod` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `detail_mutasi_prod`
+-- Dumping data for table `detail_mutasi_prod`
 --
 
 INSERT INTO `detail_mutasi_prod` (`KODE_MUTASI`, `KODE_BARANG`, `JUMLAH`) VALUES
@@ -1066,7 +1072,7 @@ INSERT INTO `detail_mutasi_prod` (`KODE_MUTASI`, `KODE_BARANG`, `JUMLAH`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_ofname_outlet`
+-- Table structure for table `detail_ofname_outlet`
 --
 
 CREATE TABLE IF NOT EXISTS `detail_ofname_outlet` (
@@ -1078,7 +1084,7 @@ CREATE TABLE IF NOT EXISTS `detail_ofname_outlet` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `detail_ofname_outlet`
+-- Dumping data for table `detail_ofname_outlet`
 --
 
 INSERT INTO `detail_ofname_outlet` (`id_head`, `kode_barang`, `stok_apl`, `stok_fisik`, `selisih`) VALUES
@@ -1141,7 +1147,7 @@ INSERT INTO `detail_ofname_outlet` (`id_head`, `kode_barang`, `stok_apl`, `stok_
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_ofname_pusat`
+-- Table structure for table `detail_ofname_pusat`
 --
 
 CREATE TABLE IF NOT EXISTS `detail_ofname_pusat` (
@@ -1153,7 +1159,7 @@ CREATE TABLE IF NOT EXISTS `detail_ofname_pusat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `detail_ofname_pusat`
+-- Dumping data for table `detail_ofname_pusat`
 --
 
 INSERT INTO `detail_ofname_pusat` (`id_head`, `id_barang`, `stok_apl`, `stok_fisik`, `selisih`) VALUES
@@ -1218,7 +1224,7 @@ INSERT INTO `detail_ofname_pusat` (`id_head`, `id_barang`, `stok_apl`, `stok_fis
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_pengiriman_barang`
+-- Table structure for table `detail_pengiriman_barang`
 --
 
 CREATE TABLE IF NOT EXISTS `detail_pengiriman_barang` (
@@ -1232,7 +1238,7 @@ CREATE TABLE IF NOT EXISTS `detail_pengiriman_barang` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
 
 --
--- Dumping data untuk tabel `detail_pengiriman_barang`
+-- Dumping data for table `detail_pengiriman_barang`
 --
 
 INSERT INTO `detail_pengiriman_barang` (`ID_PENGIRIMAN`, `NO_NOTA_PENGIRIMAN`, `KODE_BARANG`, `HARGA_BARANG`, `DISKON`, `JUMLAH`, `SESSION_PENJUALAN`) VALUES
@@ -1250,7 +1256,7 @@ INSERT INTO `detail_pengiriman_barang` (`ID_PENGIRIMAN`, `NO_NOTA_PENGIRIMAN`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_penjualan`
+-- Table structure for table `detail_penjualan`
 --
 
 CREATE TABLE IF NOT EXISTS `detail_penjualan` (
@@ -1264,7 +1270,7 @@ CREATE TABLE IF NOT EXISTS `detail_penjualan` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
 
 --
--- Dumping data untuk tabel `detail_penjualan`
+-- Dumping data for table `detail_penjualan`
 --
 
 INSERT INTO `detail_penjualan` (`ID_DETAIL_PENJUALAN`, `NO_NOTA_PENJUALAN`, `KODE_BARANG`, `HARGA_BARANG`, `DISKON`, `JUMLAH`, `GRAND_PRICE`) VALUES
@@ -1283,7 +1289,7 @@ INSERT INTO `detail_penjualan` (`ID_DETAIL_PENJUALAN`, `NO_NOTA_PENJUALAN`, `KOD
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_penjualan_grosir`
+-- Table structure for table `detail_penjualan_grosir`
 --
 
 CREATE TABLE IF NOT EXISTS `detail_penjualan_grosir` (
@@ -1297,7 +1303,7 @@ CREATE TABLE IF NOT EXISTS `detail_penjualan_grosir` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 --
--- Dumping data untuk tabel `detail_penjualan_grosir`
+-- Dumping data for table `detail_penjualan_grosir`
 --
 
 INSERT INTO `detail_penjualan_grosir` (`ID_detail_penjualan_grosir`, `NO_NOTA_PENJUALAN`, `KODE_BARANG`, `HARGA_BARANG`, `DISKON`, `JUMLAH`, `GRAND_PRICE`) VALUES
@@ -1306,7 +1312,7 @@ INSERT INTO `detail_penjualan_grosir` (`ID_detail_penjualan_grosir`, `NO_NOTA_PE
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_retur_konsinyasi`
+-- Table structure for table `detail_retur_konsinyasi`
 --
 
 CREATE TABLE IF NOT EXISTS `detail_retur_konsinyasi` (
@@ -1317,7 +1323,7 @@ CREATE TABLE IF NOT EXISTS `detail_retur_konsinyasi` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
--- Dumping data untuk tabel `detail_retur_konsinyasi`
+-- Dumping data for table `detail_retur_konsinyasi`
 --
 
 INSERT INTO `detail_retur_konsinyasi` (`ID`, `NO_RETUR`, `KODE_BARANG`, `JUMLAH_RETUR`) VALUES
@@ -1327,7 +1333,7 @@ INSERT INTO `detail_retur_konsinyasi` (`ID`, `NO_RETUR`, `KODE_BARANG`, `JUMLAH_
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_retur_penjualan`
+-- Table structure for table `detail_retur_penjualan`
 --
 
 CREATE TABLE IF NOT EXISTS `detail_retur_penjualan` (
@@ -1338,7 +1344,7 @@ CREATE TABLE IF NOT EXISTS `detail_retur_penjualan` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
 --
--- Dumping data untuk tabel `detail_retur_penjualan`
+-- Dumping data for table `detail_retur_penjualan`
 --
 
 INSERT INTO `detail_retur_penjualan` (`ID`, `NO_RETUR`, `KODE_BARANG`, `JUMLAH_RETUR`) VALUES
@@ -1349,7 +1355,7 @@ INSERT INTO `detail_retur_penjualan` (`ID`, `NO_RETUR`, `KODE_BARANG`, `JUMLAH_R
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `diskon_mitra`
+-- Table structure for table `diskon_mitra`
 --
 
 CREATE TABLE IF NOT EXISTS `diskon_mitra` (
@@ -1357,10 +1363,10 @@ CREATE TABLE IF NOT EXISTS `diskon_mitra` (
   `ID_KATEGORI` int(11) NOT NULL,
   `PRESENTASE` int(11) NOT NULL,
   `KODE_PELANGGAN` varchar(50) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=49 ;
 
 --
--- Dumping data untuk tabel `diskon_mitra`
+-- Dumping data for table `diskon_mitra`
 --
 
 INSERT INTO `diskon_mitra` (`ID`, `ID_KATEGORI`, `PRESENTASE`, `KODE_PELANGGAN`) VALUES
@@ -1375,12 +1381,48 @@ INSERT INTO `diskon_mitra` (`ID`, `ID_KATEGORI`, `PRESENTASE`, `KODE_PELANGGAN`)
 (9, 9, 9, 'P0000001'),
 (10, 10, 10, 'P0000001'),
 (11, 11, 11, 'P0000001'),
-(12, 12, 12, 'P0000001');
+(12, 12, 12, 'P0000001'),
+(13, 1, 10, 'P00002'),
+(14, 2, 11, 'P00002'),
+(15, 3, 5, 'P00002'),
+(16, 4, 5, 'P00002'),
+(17, 5, 5, 'P00002'),
+(18, 6, 5, 'P00002'),
+(19, 7, 5, 'P00002'),
+(20, 8, 5, 'P00002'),
+(21, 9, 5, 'P00002'),
+(22, 10, 10, 'P00002'),
+(23, 11, 10, 'P00002'),
+(24, 12, 5, 'P00002'),
+(25, 1, 0, ''),
+(26, 2, 0, ''),
+(27, 3, 0, ''),
+(28, 4, 0, ''),
+(29, 5, 0, ''),
+(30, 6, 0, ''),
+(31, 7, 0, ''),
+(32, 8, 0, ''),
+(33, 9, 0, ''),
+(34, 10, 0, ''),
+(35, 11, 0, ''),
+(36, 12, 0, ''),
+(37, 1, 0, ''),
+(38, 2, 0, ''),
+(39, 3, 0, ''),
+(40, 4, 0, ''),
+(41, 5, 0, ''),
+(42, 6, 0, ''),
+(43, 7, 0, ''),
+(44, 8, 0, ''),
+(45, 9, 0, ''),
+(46, 10, 0, ''),
+(47, 11, 0, ''),
+(48, 12, 0, '');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `gudang_produksi`
+-- Table structure for table `gudang_produksi`
 --
 
 CREATE TABLE IF NOT EXISTS `gudang_produksi` (
@@ -1395,7 +1437,7 @@ CREATE TABLE IF NOT EXISTS `gudang_produksi` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Dumping data untuk tabel `gudang_produksi`
+-- Dumping data for table `gudang_produksi`
 --
 
 INSERT INTO `gudang_produksi` (`PRD_ID_BARANG`, `PRD_KODE_BARANG`, `PRD_BARCODE`, `PRD_NAMA_BARANG`, `KATEGORI`, `PRD_STOCK`, `PRD_STOCK_BAYANGAN`, `STATUS`) VALUES
@@ -1405,7 +1447,7 @@ INSERT INTO `gudang_produksi` (`PRD_ID_BARANG`, `PRD_KODE_BARANG`, `PRD_BARCODE`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `head_bhn_masuk`
+-- Table structure for table `head_bhn_masuk`
 --
 
 CREATE TABLE IF NOT EXISTS `head_bhn_masuk` (
@@ -1419,7 +1461,7 @@ CREATE TABLE IF NOT EXISTS `head_bhn_masuk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `head_bhn_masuk`
+-- Dumping data for table `head_bhn_masuk`
 --
 
 INSERT INTO `head_bhn_masuk` (`ID_BHN_MASUK`, `ID_PETUGAS`, `ID_PETUGAS_PENERIMA`, `TGL_PEMBELIAN`, `TGL_MASUK`, `TOTAL_HARGA`, `STATUS`) VALUES
@@ -1429,7 +1471,7 @@ INSERT INTO `head_bhn_masuk` (`ID_BHN_MASUK`, `ID_PETUGAS`, `ID_PETUGAS_PENERIMA
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `head_kalkulasi_produksi`
+-- Table structure for table `head_kalkulasi_produksi`
 --
 
 CREATE TABLE IF NOT EXISTS `head_kalkulasi_produksi` (
@@ -1440,7 +1482,7 @@ CREATE TABLE IF NOT EXISTS `head_kalkulasi_produksi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `head_kalkulasi_produksi`
+-- Dumping data for table `head_kalkulasi_produksi`
 --
 
 INSERT INTO `head_kalkulasi_produksi` (`ID_KALKULASI`, `TGL_KALKULASI`, `TGL_BERES_PROD`, `STATUS`) VALUES
@@ -1451,7 +1493,7 @@ INSERT INTO `head_kalkulasi_produksi` (`ID_KALKULASI`, `TGL_KALKULASI`, `TGL_BER
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `head_mutasi_prod`
+-- Table structure for table `head_mutasi_prod`
 --
 
 CREATE TABLE IF NOT EXISTS `head_mutasi_prod` (
@@ -1464,7 +1506,7 @@ CREATE TABLE IF NOT EXISTS `head_mutasi_prod` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `head_mutasi_prod`
+-- Dumping data for table `head_mutasi_prod`
 --
 
 INSERT INTO `head_mutasi_prod` (`KODE_MUTASI`, `TANGGAL_KELUAR`, `TANGGAL_DITERIMA`, `ID_PTGS_KELUAR`, `ID_PTGS_TERIMA`, `STATUS`) VALUES
@@ -1473,7 +1515,7 @@ INSERT INTO `head_mutasi_prod` (`KODE_MUTASI`, `TANGGAL_KELUAR`, `TANGGAL_DITERI
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `head_ofname_outlet`
+-- Table structure for table `head_ofname_outlet`
 --
 
 CREATE TABLE IF NOT EXISTS `head_ofname_outlet` (
@@ -1484,7 +1526,7 @@ CREATE TABLE IF NOT EXISTS `head_ofname_outlet` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `head_ofname_outlet`
+-- Dumping data for table `head_ofname_outlet`
 --
 
 INSERT INTO `head_ofname_outlet` (`id`, `tanggal`, `user_posting`, `outlet`) VALUES
@@ -1493,7 +1535,7 @@ INSERT INTO `head_ofname_outlet` (`id`, `tanggal`, `user_posting`, `outlet`) VAL
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `head_ofname_pusat`
+-- Table structure for table `head_ofname_pusat`
 --
 
 CREATE TABLE IF NOT EXISTS `head_ofname_pusat` (
@@ -1503,7 +1545,7 @@ CREATE TABLE IF NOT EXISTS `head_ofname_pusat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `head_ofname_pusat`
+-- Dumping data for table `head_ofname_pusat`
 --
 
 INSERT INTO `head_ofname_pusat` (`id`, `tanggal`, `user_posting`) VALUES
@@ -1512,7 +1554,7 @@ INSERT INTO `head_ofname_pusat` (`id`, `tanggal`, `user_posting`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `item_transfer`
+-- Table structure for table `item_transfer`
 --
 
 CREATE TABLE IF NOT EXISTS `item_transfer` (
@@ -1540,7 +1582,7 @@ CREATE TABLE IF NOT EXISTS `item_transfer` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jenis_barang`
+-- Table structure for table `jenis_barang`
 --
 
 CREATE TABLE IF NOT EXISTS `jenis_barang` (
@@ -1552,7 +1594,7 @@ CREATE TABLE IF NOT EXISTS `jenis_barang` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=234 ;
 
 --
--- Dumping data untuk tabel `jenis_barang`
+-- Dumping data for table `jenis_barang`
 --
 
 INSERT INTO `jenis_barang` (`ID`, `KODE_JENIS`, `KODE_GOLONGAN`, `NAMA_JENIS`, `KETERANGAN`) VALUES
@@ -1793,7 +1835,7 @@ INSERT INTO `jenis_barang` (`ID`, `KODE_JENIS`, `KODE_GOLONGAN`, `NAMA_JENIS`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kasir`
+-- Table structure for table `kasir`
 --
 
 CREATE TABLE IF NOT EXISTS `kasir` (
@@ -1805,7 +1847,7 @@ CREATE TABLE IF NOT EXISTS `kasir` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Dumping data untuk tabel `kasir`
+-- Dumping data for table `kasir`
 --
 
 INSERT INTO `kasir` (`KODE_KASIR`, `NAMA_KASIR`, `USERNAME`, `PASSWORD`, `STATE_ID`) VALUES
@@ -1814,7 +1856,7 @@ INSERT INTO `kasir` (`KODE_KASIR`, `NAMA_KASIR`, `USERNAME`, `PASSWORD`, `STATE_
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategori`
+-- Table structure for table `kategori`
 --
 
 CREATE TABLE IF NOT EXISTS `kategori` (
@@ -1824,7 +1866,7 @@ CREATE TABLE IF NOT EXISTS `kategori` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
--- Dumping data untuk tabel `kategori`
+-- Dumping data for table `kategori`
 --
 
 INSERT INTO `kategori` (`ID_KATEGORI`, `KODE_KATEGORI`, `NAMA_KATEGORI`) VALUES
@@ -1844,7 +1886,7 @@ INSERT INTO `kategori` (`ID_KATEGORI`, `KODE_KATEGORI`, `NAMA_KATEGORI`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `manufacturing`
+-- Table structure for table `manufacturing`
 --
 
 CREATE TABLE IF NOT EXISTS `manufacturing` (
@@ -1853,7 +1895,7 @@ CREATE TABLE IF NOT EXISTS `manufacturing` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `manufacturing`
+-- Dumping data for table `manufacturing`
 --
 
 INSERT INTO `manufacturing` (`MAN_ID_MANUFACTURING`, `MAN_KODE_BARANG`) VALUES
@@ -1863,7 +1905,7 @@ INSERT INTO `manufacturing` (`MAN_ID_MANUFACTURING`, `MAN_KODE_BARANG`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `outlet`
+-- Table structure for table `outlet`
 --
 
 CREATE TABLE IF NOT EXISTS `outlet` (
@@ -1875,7 +1917,7 @@ CREATE TABLE IF NOT EXISTS `outlet` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
 
 --
--- Dumping data untuk tabel `outlet`
+-- Dumping data for table `outlet`
 --
 
 INSERT INTO `outlet` (`KODE_OUTLET`, `NAMA_OUTLET`, `LOKASI`, `ALAMAT`, `NO_TELEPON`) VALUES
@@ -1902,14 +1944,12 @@ INSERT INTO `outlet` (`KODE_OUTLET`, `NAMA_OUTLET`, `LOKASI`, `ALAMAT`, `NO_TELE
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pelanggan`
+-- Table structure for table `pelanggan`
 --
 
 CREATE TABLE IF NOT EXISTS `pelanggan` (
 `ID_PELANGGAN` int(100) NOT NULL,
   `GOLONGAN_PELANGGAN` text NOT NULL,
-  `JENIS_PELANGGAN` text NOT NULL,
-  `PRODUK_PELANGGAN` text NOT NULL,
   `KODE_PELANGGAN` varchar(50) NOT NULL,
   `NAMA_PELANGGAN` varchar(100) NOT NULL,
   `ALAMAT` text NOT NULL,
@@ -1921,19 +1961,19 @@ CREATE TABLE IF NOT EXISTS `pelanggan` (
   `NO_REKENING` text NOT NULL,
   `PEMILIK_REKENING` text NOT NULL,
   `KETERANGAN` text NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
--- Dumping data untuk tabel `pelanggan`
+-- Dumping data for table `pelanggan`
 --
 
-INSERT INTO `pelanggan` (`ID_PELANGGAN`, `GOLONGAN_PELANGGAN`, `JENIS_PELANGGAN`, `PRODUK_PELANGGAN`, `KODE_PELANGGAN`, `NAMA_PELANGGAN`, `ALAMAT`, `KOTA`, `NO_TELP`, `NO_TELP2`, `TANGGAL_TERDAFTAR`, `BANK`, `NO_REKENING`, `PEMILIK_REKENING`, `KETERANGAN`) VALUES
-(1, 'Golongan 1', 'Jenis 1', 'Produk 1', 'P0000001', 'Ahmad Saepudin', '<p>Jl.Muara</p>\n', 'Jakarta', 2147483647, 2147483647, '0000-00-00', 'BCA', '12332145127', 'Ahmad Saepudin', '');
+INSERT INTO `pelanggan` (`ID_PELANGGAN`, `GOLONGAN_PELANGGAN`, `KODE_PELANGGAN`, `NAMA_PELANGGAN`, `ALAMAT`, `KOTA`, `NO_TELP`, `NO_TELP2`, `TANGGAL_TERDAFTAR`, `BANK`, `NO_REKENING`, `PEMILIK_REKENING`, `KETERANGAN`) VALUES
+(1, 'Consina Store', 'P00001', 'Udin', '<p>jalan sana sinhi</p>\n', 'Bandung', 123123123, 123123123, '2015-10-28', 'BNI', '123123123', 'Udin', '');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pengaturan_penjualan`
+-- Table structure for table `pengaturan_penjualan`
 --
 
 CREATE TABLE IF NOT EXISTS `pengaturan_penjualan` (
@@ -1943,7 +1983,7 @@ CREATE TABLE IF NOT EXISTS `pengaturan_penjualan` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Dumping data untuk tabel `pengaturan_penjualan`
+-- Dumping data for table `pengaturan_penjualan`
 --
 
 INSERT INTO `pengaturan_penjualan` (`PARAMETER_ID`, `PARAMETER_NAME`, `PARAMETER_VALUE`) VALUES
@@ -1952,7 +1992,7 @@ INSERT INTO `pengaturan_penjualan` (`PARAMETER_ID`, `PARAMETER_NAME`, `PARAMETER
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pengiriman_barang`
+-- Table structure for table `pengiriman_barang`
 --
 
 CREATE TABLE IF NOT EXISTS `pengiriman_barang` (
@@ -1969,7 +2009,7 @@ CREATE TABLE IF NOT EXISTS `pengiriman_barang` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 --
--- Dumping data untuk tabel `pengiriman_barang`
+-- Dumping data for table `pengiriman_barang`
 --
 
 INSERT INTO `pengiriman_barang` (`ID`, `ID_PENGIRIMAN`, `OUTLET`, `TANGGAL_PENGIRIMAN`, `TANGGAL_PENERIMAAN`, `PENERIMA`, `PENGIRIM`, `STATUS_PENGIRIMAN`, `KETERANGAN`, `DISKON`) VALUES
@@ -1979,7 +2019,7 @@ INSERT INTO `pengiriman_barang` (`ID`, `ID_PENGIRIMAN`, `OUTLET`, `TANGGAL_PENGI
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `penjualan`
+-- Table structure for table `penjualan`
 --
 
 CREATE TABLE IF NOT EXISTS `penjualan` (
@@ -2003,7 +2043,7 @@ CREATE TABLE IF NOT EXISTS `penjualan` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 --
--- Dumping data untuk tabel `penjualan`
+-- Dumping data for table `penjualan`
 --
 
 INSERT INTO `penjualan` (`ID_PENJUALAN`, `NO_NOTA_PENJUALAN`, `TANGGAL`, `OPERATOR_KASIR`, `SUB_TOTAL_PENJUALAN`, `TIPE_PEMBAYARAN`, `DISKON_PENJUALAN`, `TAX_SALES`, `UANG_BAYAR`, `UANG_KEMBALI`, `PELANGGAN`, `CATATAN`, `STATUS`, `DISKON_PELANGGAN`, `NAMA_BANK`, `NO_KARTU`, `OUTLET`) VALUES
@@ -2013,13 +2053,37 @@ INSERT INTO `penjualan` (`ID_PENJUALAN`, `NO_NOTA_PENJUALAN`, `TANGGAL`, `OPERAT
 (9, 'JR08/30/150004-1', '2015-08-30 16:37:38', 6, 950000, 'CASH', 0, 0, 950000, 0, '', '', 'LUNAS', 0, '', '', 1),
 (10, 'JR08/31/150005-5', '2015-08-31 12:31:28', 9, 19000, 'DEBET', 0, 0, 20000, 1000, '', '', 'LUNAS', 0, 'BCA ', '126152615276', 5),
 (11, 'JR09/01/150006-5', '2015-09-01 16:30:22', 9, 544500, 'CASH', 0, 0, 600000, 55500, '', '', 'LUNAS', 0, '', '', 5),
-(12, 'JR10/20/150007-1', '2015-10-20 18:51:06', 6, 2850000, 'CASH', 0, 0, 2900000, 50000, '', '', 'LUNAS', 0, '', '', 1),
+(12, 'JR10/20/150007-1', '2015-10-20 18:51:06', 6, 2850000, 'CASH', 0, 0, 2900000, 50000, '', '', 'BATAL', 0, '', '', 1),
 (13, 'JR10/22/150008-1', '2015-10-22 21:57:44', 6, 1700000, 'CASH', 0, 0, 1700000, 0, '', '', 'LUNAS', 0, '', '', 1);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `penjualan_grosir`
+-- Table structure for table `penjualan_batal`
+--
+
+CREATE TABLE IF NOT EXISTS `penjualan_batal` (
+`ID_PENJUALAN_BATAL` int(11) NOT NULL,
+  `NO_NOTA_PENJUALAN` varchar(50) NOT NULL,
+  `TANGGAL` datetime NOT NULL,
+  `OPERATOR_KASIR` varchar(100) NOT NULL,
+  `SUB_TOTAL_PENJUALAN` int(11) NOT NULL,
+  `NAMA_PELANGGAN` varchar(50) NOT NULL,
+  `NO_TELP` varchar(20) NOT NULL,
+  `KETERANGAN` text
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `penjualan_batal`
+--
+
+INSERT INTO `penjualan_batal` (`ID_PENJUALAN_BATAL`, `NO_NOTA_PENJUALAN`, `TANGGAL`, `OPERATOR_KASIR`, `SUB_TOTAL_PENJUALAN`, `NAMA_PELANGGAN`, `NO_TELP`, `KETERANGAN`) VALUES
+(2, 'JR10/20/150007-1', '2015-10-28 14:18:35', '2015-10-28 14:18:35', 2850000, 'Fani', '088801878151', 'dibatalkan ah');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `penjualan_grosir`
 --
 
 CREATE TABLE IF NOT EXISTS `penjualan_grosir` (
@@ -2045,7 +2109,7 @@ CREATE TABLE IF NOT EXISTS `penjualan_grosir` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
--- Dumping data untuk tabel `penjualan_grosir`
+-- Dumping data for table `penjualan_grosir`
 --
 
 INSERT INTO `penjualan_grosir` (`ID_PENJUALAN`, `NO_NOTA_PENJUALAN`, `TANGGAL`, `OPERATOR_KASIR`, `SUB_TOTAL_PENJUALAN`, `TIPE_PEMBAYARAN`, `DISKON_PENJUALAN`, `TAX_SALES`, `UANG_BAYAR`, `UANG_KEMBALI`, `PELANGGAN`, `CATATAN`, `STATUS`, `DISKON_PELANGGAN`, `NAMA_BANK`, `NO_KARTU`, `OUTLET`, `JATUH_TEMPO`, `BIAYA_KIRIM`) VALUES
@@ -2054,7 +2118,7 @@ INSERT INTO `penjualan_grosir` (`ID_PENJUALAN`, `NO_NOTA_PENJUALAN`, `TANGGAL`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `penyesuaian_stok_outlet`
+-- Table structure for table `penyesuaian_stok_outlet`
 --
 
 CREATE TABLE IF NOT EXISTS `penyesuaian_stok_outlet` (
@@ -2070,7 +2134,7 @@ CREATE TABLE IF NOT EXISTS `penyesuaian_stok_outlet` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Trigger `penyesuaian_stok_outlet`
+-- Triggers `penyesuaian_stok_outlet`
 --
 DELIMITER //
 CREATE TRIGGER `adjustoutlet` AFTER INSERT ON `penyesuaian_stok_outlet`
@@ -2102,7 +2166,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `penyesuaian_stok_pusat`
+-- Table structure for table `penyesuaian_stok_pusat`
 --
 
 CREATE TABLE IF NOT EXISTS `penyesuaian_stok_pusat` (
@@ -2117,7 +2181,7 @@ CREATE TABLE IF NOT EXISTS `penyesuaian_stok_pusat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Trigger `penyesuaian_stok_pusat`
+-- Triggers `penyesuaian_stok_pusat`
 --
 DELIMITER //
 CREATE TRIGGER `hapusadjust` AFTER DELETE ON `penyesuaian_stok_pusat`
@@ -2147,7 +2211,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `printer_config`
+-- Table structure for table `printer_config`
 --
 
 CREATE TABLE IF NOT EXISTS `printer_config` (
@@ -2158,7 +2222,7 @@ CREATE TABLE IF NOT EXISTS `printer_config` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Dumping data untuk tabel `printer_config`
+-- Dumping data for table `printer_config`
 --
 
 INSERT INTO `printer_config` (`ID_CONFIG`, `OUTLET`, `PRINTER_NAME`, `IP_ADRRESS`) VALUES
@@ -2168,7 +2232,7 @@ INSERT INTO `printer_config` (`ID_CONFIG`, `OUTLET`, `PRINTER_NAME`, `IP_ADRRESS
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `retur_konsinyasi`
+-- Table structure for table `retur_konsinyasi`
 --
 
 CREATE TABLE IF NOT EXISTS `retur_konsinyasi` (
@@ -2180,7 +2244,7 @@ CREATE TABLE IF NOT EXISTS `retur_konsinyasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `retur_konsinyasi`
+-- Dumping data for table `retur_konsinyasi`
 --
 
 INSERT INTO `retur_konsinyasi` (`NO_RETUR`, `NO_NOTA_KONSINYASI`, `TANGGAL_RETUR`, `OPERATOR_KASIR`, `CATATAN`) VALUES
@@ -2189,7 +2253,7 @@ INSERT INTO `retur_konsinyasi` (`NO_RETUR`, `NO_NOTA_KONSINYASI`, `TANGGAL_RETUR
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `retur_penjualan`
+-- Table structure for table `retur_penjualan`
 --
 
 CREATE TABLE IF NOT EXISTS `retur_penjualan` (
@@ -2201,7 +2265,7 @@ CREATE TABLE IF NOT EXISTS `retur_penjualan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `retur_penjualan`
+-- Dumping data for table `retur_penjualan`
 --
 
 INSERT INTO `retur_penjualan` (`NO_RETUR`, `NO_NOTA_PENJUALAN`, `TANGGAL_RETUR`, `OPERATOR_KASIR`, `CATATAN`) VALUES
@@ -2210,7 +2274,7 @@ INSERT INTO `retur_penjualan` (`NO_RETUR`, `NO_NOTA_PENJUALAN`, `TANGGAL_RETUR`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `satuan_barang`
+-- Table structure for table `satuan_barang`
 --
 
 CREATE TABLE IF NOT EXISTS `satuan_barang` (
@@ -2219,7 +2283,7 @@ CREATE TABLE IF NOT EXISTS `satuan_barang` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
--- Dumping data untuk tabel `satuan_barang`
+-- Dumping data for table `satuan_barang`
 --
 
 INSERT INTO `satuan_barang` (`KODE_SATUAN`, `NAMA_SATUAN`) VALUES
@@ -2231,7 +2295,7 @@ INSERT INTO `satuan_barang` (`KODE_SATUAN`, `NAMA_SATUAN`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `supplier`
+-- Table structure for table `supplier`
 --
 
 CREATE TABLE IF NOT EXISTS `supplier` (
@@ -2240,21 +2304,24 @@ CREATE TABLE IF NOT EXISTS `supplier` (
   `NAMA_SUPPLIER` varchar(100) NOT NULL,
   `ALAMAT` text NOT NULL,
   `NO_TELEPON` int(11) NOT NULL,
+  `NO_REKENING` varchar(50) DEFAULT NULL,
+  `NPWP` varchar(70) DEFAULT NULL,
   `NAMA_PERUSAHAAN` varchar(50) NOT NULL,
   `TANGGAL_TERDAFTAR` date NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Dumping data untuk tabel `supplier`
+-- Dumping data for table `supplier`
 --
 
-INSERT INTO `supplier` (`ID_SUPPLIER`, `KODE_SUPPLIER`, `NAMA_SUPPLIER`, `ALAMAT`, `NO_TELEPON`, `NAMA_PERUSAHAAN`, `TANGGAL_TERDAFTAR`) VALUES
-(1, 'PS00001', 'Wahyu', '<p>Jl.Muara Angke</p>\n', 2147483647, 'PT.Cahaya Alam', '2015-10-26');
+INSERT INTO `supplier` (`ID_SUPPLIER`, `KODE_SUPPLIER`, `NAMA_SUPPLIER`, `ALAMAT`, `NO_TELEPON`, `NO_REKENING`, `NPWP`, `NAMA_PERUSAHAAN`, `TANGGAL_TERDAFTAR`) VALUES
+(1, 'S00001', 'adin', '<p>disana</p>\n', 123123123, '123123123', '12345678', 'pt itu', '2015-10-20'),
+(2, 'S00002', 'asdf', '<p>asdf</p>\n', 123213, '123123', '123123', 'asdfasdf', '2015-10-20');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sys_group_users`
+-- Table structure for table `sys_group_users`
 --
 
 CREATE TABLE IF NOT EXISTS `sys_group_users` (
@@ -2264,7 +2331,7 @@ CREATE TABLE IF NOT EXISTS `sys_group_users` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
--- Dumping data untuk tabel `sys_group_users`
+-- Dumping data for table `sys_group_users`
 --
 
 INSERT INTO `sys_group_users` (`id`, `level`, `deskripsi`) VALUES
@@ -2276,7 +2343,7 @@ INSERT INTO `sys_group_users` (`id`, `level`, `deskripsi`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sys_menu`
+-- Table structure for table `sys_menu`
 --
 
 CREATE TABLE IF NOT EXISTS `sys_menu` (
@@ -2291,7 +2358,7 @@ CREATE TABLE IF NOT EXISTS `sys_menu` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=102 ;
 
 --
--- Dumping data untuk tabel `sys_menu`
+-- Dumping data for table `sys_menu`
 --
 
 INSERT INTO `sys_menu` (`id`, `nav_act`, `page_name`, `url`, `main_table`, `urutan_menu`, `modul_id`, `dt_table`) VALUES
@@ -2352,7 +2419,7 @@ INSERT INTO `sys_menu` (`id`, `nav_act`, `page_name`, `url`, `main_table`, `urut
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sys_menu_role`
+-- Table structure for table `sys_menu_role`
 --
 
 CREATE TABLE IF NOT EXISTS `sys_menu_role` (
@@ -2366,7 +2433,7 @@ CREATE TABLE IF NOT EXISTS `sys_menu_role` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=237 ;
 
 --
--- Dumping data untuk tabel `sys_menu_role`
+-- Dumping data for table `sys_menu_role`
 --
 
 INSERT INTO `sys_menu_role` (`id`, `id_menu`, `group_id`, `read_act`, `insert_act`, `update_act`, `delete_act`) VALUES
@@ -2511,7 +2578,7 @@ INSERT INTO `sys_menu_role` (`id`, `id_menu`, `group_id`, `read_act`, `insert_ac
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sys_modul`
+-- Table structure for table `sys_modul`
 --
 
 CREATE TABLE IF NOT EXISTS `sys_modul` (
@@ -2524,7 +2591,7 @@ CREATE TABLE IF NOT EXISTS `sys_modul` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=65 ;
 
 --
--- Dumping data untuk tabel `sys_modul`
+-- Dumping data for table `sys_modul`
 --
 
 INSERT INTO `sys_modul` (`id`, `modul_name`, `urutan`, `icon`, `tampil`, `application`) VALUES
@@ -2563,7 +2630,7 @@ INSERT INTO `sys_modul` (`id`, `modul_name`, `urutan`, `icon`, `tampil`, `applic
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sys_profil_perusahaan`
+-- Table structure for table `sys_profil_perusahaan`
 --
 
 CREATE TABLE IF NOT EXISTS `sys_profil_perusahaan` (
@@ -2582,7 +2649,7 @@ CREATE TABLE IF NOT EXISTS `sys_profil_perusahaan` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Dumping data untuk tabel `sys_profil_perusahaan`
+-- Dumping data for table `sys_profil_perusahaan`
 --
 
 INSERT INTO `sys_profil_perusahaan` (`NAMA_PERUSAHAAN`, `EMAIL`, `PHONE_1`, `PHONE_2`, `KOTA`, `FAXIMILI`, `ALAMAT`, `NEGARA`, `logo`, `id`, `STATE_ID`, `COLOR`) VALUES
@@ -2591,7 +2658,7 @@ INSERT INTO `sys_profil_perusahaan` (`NAMA_PERUSAHAAN`, `EMAIL`, `PHONE_1`, `PHO
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sys_state`
+-- Table structure for table `sys_state`
 --
 
 CREATE TABLE IF NOT EXISTS `sys_state` (
@@ -2600,7 +2667,7 @@ CREATE TABLE IF NOT EXISTS `sys_state` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
 
 --
--- Dumping data untuk tabel `sys_state`
+-- Dumping data for table `sys_state`
 --
 
 INSERT INTO `sys_state` (`STATE_ID`, `STATE_NAME`) VALUES
@@ -2621,7 +2688,7 @@ INSERT INTO `sys_state` (`STATE_ID`, `STATE_NAME`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sys_users`
+-- Table structure for table `sys_users`
 --
 
 CREATE TABLE IF NOT EXISTS `sys_users` (
@@ -2639,7 +2706,7 @@ CREATE TABLE IF NOT EXISTS `sys_users` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
--- Dumping data untuk tabel `sys_users`
+-- Dumping data for table `sys_users`
 --
 
 INSERT INTO `sys_users` (`id`, `first_name`, `last_name`, `username`, `password`, `email`, `date_created`, `foto_user`, `id_group`, `state_id`, `outlet`) VALUES
@@ -2652,7 +2719,7 @@ INSERT INTO `sys_users` (`id`, `first_name`, `last_name`, `username`, `password`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tampung_kalkulasi`
+-- Table structure for table `tampung_kalkulasi`
 --
 
 CREATE TABLE IF NOT EXISTS `tampung_kalkulasi` (
@@ -2665,7 +2732,7 @@ CREATE TABLE IF NOT EXISTS `tampung_kalkulasi` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Dumping data untuk tabel `tampung_kalkulasi`
+-- Dumping data for table `tampung_kalkulasi`
 --
 
 INSERT INTO `tampung_kalkulasi` (`URUT`, `TAM_HEAD`, `TAM_KODE_BARANG`, `TAM_NAMA_BARANG`, `TAM_JML_PROD`, `TAM_KAL_BAHAN`) VALUES
@@ -2675,7 +2742,7 @@ INSERT INTO `tampung_kalkulasi` (`URUT`, `TAM_HEAD`, `TAM_KODE_BARANG`, `TAM_NAM
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tampung_kalkulasi_detail`
+-- Table structure for table `tampung_kalkulasi_detail`
 --
 
 CREATE TABLE IF NOT EXISTS `tampung_kalkulasi_detail` (
@@ -2689,7 +2756,7 @@ CREATE TABLE IF NOT EXISTS `tampung_kalkulasi_detail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tampung_kalkulasi_detail`
+-- Dumping data for table `tampung_kalkulasi_detail`
 --
 
 INSERT INTO `tampung_kalkulasi_detail` (`TAM_KAL_BAHAN`, `ID_KALKULASI`, `ID_BAHAN`, `NAMA_BAHAN`, `SATUAN`, `JML_PCS`, `JML_TOTAL`) VALUES
@@ -2702,7 +2769,7 @@ INSERT INTO `tampung_kalkulasi_detail` (`TAM_KAL_BAHAN`, `ID_KALKULASI`, `ID_BAH
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tampung_manufacturing`
+-- Table structure for table `tampung_manufacturing`
 --
 
 CREATE TABLE IF NOT EXISTS `tampung_manufacturing` (
@@ -2719,7 +2786,7 @@ CREATE TABLE IF NOT EXISTS `tampung_manufacturing` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tmp_detail_bahan`
+-- Table structure for table `tmp_detail_bahan`
 --
 
 CREATE TABLE IF NOT EXISTS `tmp_detail_bahan` (
@@ -2733,7 +2800,7 @@ CREATE TABLE IF NOT EXISTS `tmp_detail_bahan` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tmp_detail_item_transfer`
+-- Table structure for table `tmp_detail_item_transfer`
 --
 
 CREATE TABLE IF NOT EXISTS `tmp_detail_item_transfer` (
@@ -2750,7 +2817,7 @@ CREATE TABLE IF NOT EXISTS `tmp_detail_item_transfer` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tmp_detail_konsinyasi`
+-- Table structure for table `tmp_detail_konsinyasi`
 --
 
 CREATE TABLE IF NOT EXISTS `tmp_detail_konsinyasi` (
@@ -2766,7 +2833,7 @@ CREATE TABLE IF NOT EXISTS `tmp_detail_konsinyasi` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tmp_detail_penjualan`
+-- Table structure for table `tmp_detail_penjualan`
 --
 
 CREATE TABLE IF NOT EXISTS `tmp_detail_penjualan` (
@@ -2781,7 +2848,7 @@ CREATE TABLE IF NOT EXISTS `tmp_detail_penjualan` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Dumping data untuk tabel `tmp_detail_penjualan`
+-- Dumping data for table `tmp_detail_penjualan`
 --
 
 INSERT INTO `tmp_detail_penjualan` (`ID_TMP_PENJUALAN`, `NO_NOTA_PENJUALAN`, `KODE_BARANG`, `HARGA_BARANG`, `DISKON`, `JUMLAH`, `SESSION_PENJUALAN`, `GRAND_PRICE`) VALUES
@@ -2790,7 +2857,7 @@ INSERT INTO `tmp_detail_penjualan` (`ID_TMP_PENJUALAN`, `NO_NOTA_PENJUALAN`, `KO
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tmp_detail_penjualan_grosir`
+-- Table structure for table `tmp_detail_penjualan_grosir`
 --
 
 CREATE TABLE IF NOT EXISTS `tmp_detail_penjualan_grosir` (
@@ -2807,7 +2874,7 @@ CREATE TABLE IF NOT EXISTS `tmp_detail_penjualan_grosir` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tmp_mutasi_prd`
+-- Table structure for table `tmp_mutasi_prd`
 --
 
 CREATE TABLE IF NOT EXISTS `tmp_mutasi_prd` (
@@ -2820,7 +2887,7 @@ CREATE TABLE IF NOT EXISTS `tmp_mutasi_prd` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tmp_pengiriman_barang`
+-- Table structure for table `tmp_pengiriman_barang`
 --
 
 CREATE TABLE IF NOT EXISTS `tmp_pengiriman_barang` (
@@ -2836,7 +2903,7 @@ CREATE TABLE IF NOT EXISTS `tmp_pengiriman_barang` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `transaksi_konsinyasi`
+-- Table structure for table `transaksi_konsinyasi`
 --
 
 CREATE TABLE IF NOT EXISTS `transaksi_konsinyasi` (
@@ -2860,7 +2927,7 @@ CREATE TABLE IF NOT EXISTS `transaksi_konsinyasi` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
--- Dumping data untuk tabel `transaksi_konsinyasi`
+-- Dumping data for table `transaksi_konsinyasi`
 --
 
 INSERT INTO `transaksi_konsinyasi` (`ID_KONSINYASI`, `NO_NOTA_KONSINYASI`, `TANGGAL`, `OPERATOR_KASIR`, `SUB_TOTAL_PENJUALAN`, `TIPE_PEMBAYARAN`, `DISKON_PENJUALAN`, `TAX_SALES`, `UANG_BAYAR`, `UANG_KEMBALI`, `SUPPLIER`, `CATATAN`, `STATUS`, `DISKON_SUPPLIER`, `OUTLET`, `JATUH_TEMPO`, `BIAYA_KIRIM`) VALUES
@@ -3085,6 +3152,12 @@ ALTER TABLE `pengiriman_barang`
 --
 ALTER TABLE `penjualan`
  ADD PRIMARY KEY (`ID_PENJUALAN`);
+
+--
+-- Indexes for table `penjualan_batal`
+--
+ALTER TABLE `penjualan_batal`
+ ADD PRIMARY KEY (`ID_PENJUALAN_BATAL`);
 
 --
 -- Indexes for table `penjualan_grosir`
@@ -3315,7 +3388,7 @@ MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 -- AUTO_INCREMENT for table `diskon_mitra`
 --
 ALTER TABLE `diskon_mitra`
-MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=49;
 --
 -- AUTO_INCREMENT for table `gudang_produksi`
 --
@@ -3350,7 +3423,7 @@ MODIFY `KODE_OUTLET` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
 -- AUTO_INCREMENT for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
-MODIFY `ID_PELANGGAN` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `ID_PELANGGAN` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `pengaturan_penjualan`
 --
@@ -3366,6 +3439,11 @@ MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
 --
 ALTER TABLE `penjualan`
 MODIFY `ID_PENJUALAN` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+--
+-- AUTO_INCREMENT for table `penjualan_batal`
+--
+ALTER TABLE `penjualan_batal`
+MODIFY `ID_PENJUALAN_BATAL` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `penjualan_grosir`
 --
@@ -3385,7 +3463,7 @@ MODIFY `KODE_SATUAN` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 -- AUTO_INCREMENT for table `supplier`
 --
 ALTER TABLE `supplier`
-MODIFY `ID_SUPPLIER` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `ID_SUPPLIER` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `sys_group_users`
 --
@@ -3472,78 +3550,78 @@ MODIFY `ID_TMP_PENGIRIMAN` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `transaksi_konsinyasi`
 MODIFY `ID_KONSINYASI` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `detail_kalkulasi_angsur`
+-- Constraints for table `detail_kalkulasi_angsur`
 --
 ALTER TABLE `detail_kalkulasi_angsur`
 ADD CONSTRAINT `detail_kalkulasi_angsur_ibfk_1` FOREIGN KEY (`ANGSUR`) REFERENCES `detail_kalkulasi_bahan` (`ANGSUR`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `detail_kalkulasi_bahan`
+-- Constraints for table `detail_kalkulasi_bahan`
 --
 ALTER TABLE `detail_kalkulasi_bahan`
 ADD CONSTRAINT `detail_kalkulasi_bahan_ibfk_1` FOREIGN KEY (`ID_KALKULASI`) REFERENCES `head_kalkulasi_produksi` (`ID_KALKULASI`) ON DELETE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `detail_kalkulasi_barang`
+-- Constraints for table `detail_kalkulasi_barang`
 --
 ALTER TABLE `detail_kalkulasi_barang`
 ADD CONSTRAINT `detail_kalkulasi_barang_ibfk_1` FOREIGN KEY (`ID_KALKULASI`) REFERENCES `head_kalkulasi_produksi` (`ID_KALKULASI`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `detail_kalkulasi_penyesuaian`
+-- Constraints for table `detail_kalkulasi_penyesuaian`
 --
 ALTER TABLE `detail_kalkulasi_penyesuaian`
 ADD CONSTRAINT `detail_kalkulasi_penyesuaian_ibfk_1` FOREIGN KEY (`PENYESUAIAN`) REFERENCES `detail_kalkulasi_bahan` (`ANGSUR`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `detail_manufacturing`
+-- Constraints for table `detail_manufacturing`
 --
 ALTER TABLE `detail_manufacturing`
 ADD CONSTRAINT `detail_manufacturing_ibfk_1` FOREIGN KEY (`DET_MAN_ID_MAN`) REFERENCES `manufacturing` (`MAN_ID_MANUFACTURING`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `detail_mutasi_prod`
+-- Constraints for table `detail_mutasi_prod`
 --
 ALTER TABLE `detail_mutasi_prod`
 ADD CONSTRAINT `detail_mutasi_prod_ibfk_1` FOREIGN KEY (`KODE_MUTASI`) REFERENCES `head_mutasi_prod` (`KODE_MUTASI`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `detail_ofname_outlet`
+-- Constraints for table `detail_ofname_outlet`
 --
 ALTER TABLE `detail_ofname_outlet`
 ADD CONSTRAINT `detail_ofname_outlet_ibfk_1` FOREIGN KEY (`id_head`) REFERENCES `head_ofname_outlet` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `detail_ofname_pusat`
+-- Constraints for table `detail_ofname_pusat`
 --
 ALTER TABLE `detail_ofname_pusat`
 ADD CONSTRAINT `detail_ofname_pusat_ibfk_1` FOREIGN KEY (`id_head`) REFERENCES `head_ofname_pusat` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `sys_menu`
+-- Constraints for table `sys_menu`
 --
 ALTER TABLE `sys_menu`
 ADD CONSTRAINT `FK_sys_menu_sys_modul` FOREIGN KEY (`modul_id`) REFERENCES `sys_modul` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `sys_menu_role`
+-- Constraints for table `sys_menu_role`
 --
 ALTER TABLE `sys_menu_role`
 ADD CONSTRAINT `FK_sys_menu_role_sys_group_users` FOREIGN KEY (`group_id`) REFERENCES `sys_group_users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 ADD CONSTRAINT `FK_sys_menu_role_sys_menu` FOREIGN KEY (`id_menu`) REFERENCES `sys_menu` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `sys_users`
+-- Constraints for table `sys_users`
 --
 ALTER TABLE `sys_users`
 ADD CONSTRAINT `FK_sys_users_sys_group_users` FOREIGN KEY (`id_group`) REFERENCES `sys_group_users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `tampung_kalkulasi_detail`
+-- Constraints for table `tampung_kalkulasi_detail`
 --
 ALTER TABLE `tampung_kalkulasi_detail`
 ADD CONSTRAINT `tampung_kalkulasi_detail_ibfk_1` FOREIGN KEY (`TAM_KAL_BAHAN`) REFERENCES `tampung_kalkulasi` (`TAM_KAL_BAHAN`) ON DELETE CASCADE ON UPDATE CASCADE;

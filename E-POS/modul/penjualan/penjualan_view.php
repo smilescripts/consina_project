@@ -36,7 +36,7 @@ $GETUSER = $db->fetch_single_row("outlet","KODE_OUTLET",$_SESSION["OUTLET_KODE"]
 $KODEOUTLET=$GETUSER->KODE_OUTLET;
 $NAMA_OUTLET=$GETUSER->NAMA_OUTLET;
 $LOKASI=$GETUSER->LOKASI;
-			$dtb=$db->fetch_custom("select penjualan.NO_NOTA_PENJUALAN,penjualan.TANGGAL,penjualan.SUB_TOTAL_PENJUALAN,penjualan.TIPE_PEMBAYARAN,sys_users.first_name,penjualan.ID_PENJUALAN from penjualan  inner join sys_users on penjualan.OPERATOR_KASIR=sys_users.id where penjualan.OUTLET='$KODEOUTLET' order by date(penjualan.TANGGAL) desc");
+			$dtb=$db->fetch_custom("select penjualan.STATUS, penjualan.NO_NOTA_PENJUALAN,penjualan.TANGGAL,penjualan.SUB_TOTAL_PENJUALAN,penjualan.TIPE_PEMBAYARAN,sys_users.first_name,penjualan.ID_PENJUALAN from penjualan  inner join sys_users on penjualan.OPERATOR_KASIR=sys_users.id where penjualan.OUTLET='$KODEOUTLET' order by date(penjualan.TANGGAL) desc");
 			$i=1;
 			foreach ($dtb as $isi) {
 				?><tr id="line_<?=$isi->ID_PENJUALAN;?>">
@@ -49,8 +49,7 @@ $LOKASI=$GETUSER->LOKASI;
 
         <td>
         <a href="<?=base_index();?>penjualan/detail/<?=$isi->ID_PENJUALAN;?>" class="btn btn-success btn-flat"><i class="glyphicon glyphicon-eye-open"></i></a> 
-        <?/* =($role_act["up_act"]=="Y")?'<a href="'.base_index().'penjualan/edit/'.$isi->ID_PENJUALAN.'" class="btn btn-primary btn-flat"><i class="fa fa-pencil"></i></a>':""; */?>  
-        <?/* =($role_act["del_act"]=="Y")?'<button class="btn btn-danger hapus btn-flat" data-uri="'.base_admin().'modul/penjualan/penjualan_action.php" data-id="'.$isi->ID_PENJUALAN.'"><i class="fa fa-trash-o"></i></button>':""; */?>
+        <a href="<?=base_index();?>penjualan/batal/<?=$isi->ID_PENJUALAN;?>" class="btn btn-success btn-flat"><i class="glyphicon glyphicon-pencil"></i></a> 
         </td>
         </tr>
 				<?php

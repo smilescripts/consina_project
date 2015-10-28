@@ -41,6 +41,18 @@
                         </div>
                       </div><!-- /.form-group -->
 <div class="form-group">
+                        <label for="Warna" class="control-label col-lg-2">Warna</label>
+                        <div class="col-lg-10">
+                          <input type="text" disabled="" value="<?=$data_edit->WARNA;?>" class="form-control">
+                        </div>
+                      </div><!-- /.form-group -->
+<div class="form-group">
+                        <label for="Ukuran" class="control-label col-lg-2">Ukuran</label>
+                        <div class="col-lg-10">
+                          <input type="text" disabled="" value="<?=$data_edit->UKURAN;?>" class="form-control">
+                        </div>
+                      </div><!-- /.form-group -->
+<div class="form-group">
                         <label for="Keterangan" class="control-label col-lg-2">Keterangan</label>
                         <div class="col-lg-10">
                           <input type="text" disabled="" value="<?=$data_edit->KETERANGAN;?>" class="form-control">
@@ -56,6 +68,12 @@
                         <label for="Harga jual" class="control-label col-lg-2">Harga jual</label>
                         <div class="col-lg-10">
                           <input type="text" disabled="" value="<?=$data_edit->HARGA_JUAL;?>" class="form-control">
+                        </div>
+                      </div><!-- /.form-group -->
+<div class="form-group">
+                        <label for="Stok minimal" class="control-label col-lg-2">Stok minimal</label>
+                        <div class="col-lg-10">
+                          <input type="text" disabled="" value="<?=$data_edit->STOK_MINIMAL;?>" class="form-control">
                         </div>
                       </div><!-- /.form-group -->
 <div class="form-group">

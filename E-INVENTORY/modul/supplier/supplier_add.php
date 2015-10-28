@@ -47,6 +47,18 @@
                         </div>
                       </div><!-- /.form-group -->
 <div class="form-group">
+                        <label for="No rekening" class="control-label col-lg-2">No rekening</label>
+                        <div class="col-lg-10">
+                          <input type="text" data-rule-number="true" name="NO_REKENING" placeholder="No rekening" class="form-control" required> 
+                        </div>
+                      </div><!-- /.form-group -->
+<div class="form-group">
+                        <label for="Npwp" class="control-label col-lg-2">Npwp</label>
+                        <div class="col-lg-10">
+                          <input type="text" data-rule-number="true" name="NPWP" placeholder="Npwp" class="form-control" required> 
+                        </div>
+                      </div><!-- /.form-group -->
+<div class="form-group">
                         <label for="Nama perusahaan" class="control-label col-lg-2">Nama perusahaan</label>
                         <div class="col-lg-10">
                           <input type="text" name="NAMA_PERUSAHAAN" placeholder="Nama perusahaan" class="form-control" > 
