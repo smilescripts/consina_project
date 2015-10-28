@@ -17,7 +17,10 @@
         <div class="box box-solid box-primary">
                                  <div class="box-header">
                                     <h3 class="box-title">Tambah Kategori</h3>
+<<<<<<< HEAD
                                    
+=======
+>>>>>>> origin/master
                                 </div>
 
                   <div class="box-body" >

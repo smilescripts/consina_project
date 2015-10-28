@@ -39,6 +39,11 @@
 
                           <th>Kode supplier</th>
 													<th>Nama</th>
+<<<<<<< HEAD
+=======
+													<th>No rekening</th>
+													<th>NPWP</th>
+>>>>>>> origin/master
 													<th>Tanggal terdaftar</th>
 													
 							<th>Aksi</th>

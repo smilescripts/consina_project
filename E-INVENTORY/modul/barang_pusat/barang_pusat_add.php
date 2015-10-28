@@ -41,6 +41,21 @@
                         </div>
                       </div><!-- /.form-group -->
 <div class="form-group">
+<<<<<<< HEAD
+=======
+                        <label for="Warna" class="control-label col-lg-2">Warna</label>
+                        <div class="col-lg-10">
+                          <input type="text" name="WARNA" placeholder="Warna" class="form-control" required> 
+                        </div>
+                      </div><!-- /.form-group -->
+<div class="form-group">
+                        <label for="Ukuran" class="control-label col-lg-2">Ukuran</label>
+                        <div class="col-lg-10">
+                          <input type="text" name="UKURAN" placeholder="Ukuran" class="form-control" required> 
+                        </div>
+                      </div><!-- /.form-group -->
+<div class="form-group">
+>>>>>>> origin/master
                         <label for="Keterangan" class="control-label col-lg-2">Keterangan</label>
                         <div class="col-lg-10">
                           <input type="text" name="KETERANGAN" placeholder="Keterangan" class="form-control" > 
@@ -59,6 +74,15 @@
                         </div>
                       </div><!-- /.form-group -->
 <div class="form-group">
+<<<<<<< HEAD
+=======
+                        <label for="Stok minimal" class="control-label col-lg-2">Stok minimal</label>
+                        <div class="col-lg-10">
+                          <input type="text" name="STOK_MINIMAL" placeholder="Stok minimal" class="form-control" required> 
+                        </div>
+                      </div><!-- /.form-group -->
+<div class="form-group">
+>>>>>>> origin/master
                         <label for="Stok" class="control-label col-lg-2">Stok</label>
                         <div class="col-lg-10">
                           <input type="text" name="STOK" placeholder="Stok" class="form-control" required> 

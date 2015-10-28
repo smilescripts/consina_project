@@ -12,7 +12,9 @@ define( "DB_USERNAME", "root" );
 define( "DB_PASSWORD", "" );
 //dir admin
 define( "DIR_ADMIN", "consina_project/E-POS/");
-//main directory
+
+define( "DIR_ADMIN", "consina_project/E-INVENTORY/");
+
 define( "DIR_MAIN", "consina_project/");
 
 
