@@ -1,0 +1,135 @@
+case "save":
+							$TAM_HEAD_DUA = $_POST["TAM_HEAD_DUA"];
+							$itemCount = count($_POST["TAM_KODE_BARANG"]);
+							$itemValues=0;
+								$query = "INSERT INTO `tampung_kalkulasi` (`URUT`,`TAM_HEAD`,`TAM_KODE_BARANG`,`TAM_JML_PROD`,`TAM_ID_BAHAN`,`TAM_NAMA_BAHAN`,`TAM_JML_BAHAN`,`TAM_SATUAN`,`TAM_HRG_SAT`,`TAM_TOTAL`) VALUES ";
+								
+
+								$queryValue = "";
+								for($i=0;$i<$itemCount;$i++) {
+									if(!empty($_POST["TAM_KODE_BARANG"][$i]) || !empty($_POST["TAM_JML_PROD"][$i])) {
+										$itemValues++;
+										if($queryValue!="") {
+											$queryValue .= ",";
+										}
+										$queryValue .=  "('',
+										'" . $_POST["TAM_HEAD"][$i]. "',
+										'" . $_POST["TAM_KODE_BARANG"][$i] . "', 
+										'" . $_POST["TAM_JML_PROD"][$i] . "', 
+										'" . $_POST["TAM_ID_BAHAN"][$i] . "',
+										'" . $_POST["TAM_NAMA_BAHAN"][$i] . "',										
+										'" . $_POST["TAM_JML_BAHAN"][$i] . "', 
+										'" . $_POST["TAM_SATUAN"][$i] . "', 
+										'" . $_POST["TAM_HRG_SAT"][$i] . "', 
+										'" . $_POST["TAM_TOTAL"][$i] . "')";
+									}
+								}
+								
+								 $sql = $query.$queryValue;	
+								
+								if($itemValues!=0) {
+									$result = mysql_query($sql);
+									if(!empty($result)) $message = "Added Successfully.";
+								}
+								
+								echo "<script>alert('Kalkulasi');window.location='?kalkulasi=tampil'</script>";
+				
+				break;
+				case "tampil":
+				echo'
+				<div class="row">
+					<div class="col-lg-12"> 
+						<div class="box box-solid box-primary">
+												 <div class="box-header">
+													<h3 class="box-title">Total Kalulasi</h3>
+												   
+												</div>
+
+								  <div class="box-body">
+									 <form id="input" method="post" class="form-horizontal foto_banyak" action="?kalkulasi=save">
+									  <div id="printlagi" align="center">
+										<center><h3><b>Laporan Kalkulasi Produksi Barang</b></h3><center><br><br>
+										<table class="table table-bordered table-striped" style="width:660px;">
+										<thead>
+											<tr>
+											<th>KODE BARANG</th>			
+											<th>JUMLAH PRODUKSI</th>
+											</tr>
+										</thead>
+										<tbody>';
+				
+				$CARI_KODE_BARANG = mysql_query("SELECT distinct(`TAM_KODE_BARANG`) FROM `tampung_kalkulasi`");
+					while($KD_DAPAT= mysql_fetch_array($CARI_KODE_BARANG)){
+						$KD_TARGET = $KD_DAPAT["TAM_KODE_BARANG"];
+						$CARI_PROD = mysql_query("SELECT distinct(`TAM_JML_PROD`) FROM `tampung_kalkulasi` WHERE `TAM_KODE_BARANG` = '$KD_TARGET'");
+						$PROD = mysql_fetch_array($CARI_PROD);
+								
+							echo"
+								 <tr>
+								 <td>$KD_DAPAT[TAM_KODE_BARANG]</td>
+								 <td>$PROD[TAM_JML_PROD]</td>
+								 </tr>";							
+					}	
+							echo '
+								</table>
+								<table class="table table-bordered table-striped" style="width:660px;">
+										<thead>
+											<tr>
+											<th>NAMA BAHAN</th>	
+											<th>TOTAL BAHAN</th>
+											<th>SATUAN</th>
+											<th>HARGA SATUAN</th>
+											<th>TOTAL HARGA</th>
+											</tr>
+										</thead>
+										<tbody>';
+								
+								
+									
+						$CARI_BAHAN = mysql_query("SELECT distinct(`TAM_ID_BAHAN`) FROM `tampung_kalkulasi`");
+							while($BAHAN_DAPAT= mysql_fetch_array($CARI_BAHAN)){
+								$ID_TARGET = $BAHAN_DAPAT["TAM_ID_BAHAN"];
+								
+								$CEK_NAMA = mysql_query("SELECT distinct(`TAM_NAMA_BAHAN`) AS NAMA FROM `tampung_kalkulasi` WHERE `TAM_ID_BAHAN` = '$ID_TARGET'");
+								$AMBIL_NAMA = mysql_fetch_array($CEK_NAMA);
+								
+								$CEK_TOTAL = mysql_query("SELECT SUM(TAM_TOTAL) AS TOTAL FROM `tampung_kalkulasi` WHERE `TAM_ID_BAHAN` = '$ID_TARGET'");
+								$AMBIL_TOTAL = mysql_fetch_array($CEK_TOTAL);
+								
+								$CEK_JML = mysql_query("SELECT SUM(TAM_JML_BAHAN) AS JML FROM `tampung_kalkulasi` WHERE `TAM_ID_BAHAN` = '$ID_TARGET'");
+								$AMBIL_JML = mysql_fetch_array($CEK_JML);
+								
+								$CEK_SATUAN = mysql_query("SELECT distinct(`TAM_SATUAN`) AS SATUANN FROM `tampung_kalkulasi` WHERE `TAM_ID_BAHAN` = '$ID_TARGET'");
+								$AMBIL_SATUAN = mysql_fetch_array($CEK_SATUAN);
+								
+								$CEK_HRG_SATUAN = mysql_query("SELECT distinct(`TAM_HRG_SAT`) AS HRG_SATUANN FROM `tampung_kalkulasi` WHERE `TAM_ID_BAHAN` = '$ID_TARGET'");
+								$AMBIL_HRG_SATUAN = mysql_fetch_array($CEK_HRG_SATUAN);
+								
+							echo"
+								<tr>
+								<td>$AMBIL_NAMA[NAMA]</td>
+								<td>$AMBIL_JML[JML]</td>
+								<td>$AMBIL_SATUAN[SATUANN]</td>
+								<td>$AMBIL_HRG_SATUAN[HRG_SATUANN]</td>
+								<td>$AMBIL_TOTAL[TOTAL]</td>
+								</tr>";	
+							
+							}
+							
+									$CEK_TOTAL_SEMUA = mysql_query("SELECT SUM(TAM_TOTAL) AS TOTAL_SEMUA FROM `tampung_kalkulasi`");
+									$AMBIL_TOTAL_SEMUA = mysql_fetch_array($CEK_TOTAL_SEMUA);
+								echo"
+								<tr><td colspan='4'><b>TOTAL KALKULASI</b></td>
+										   <td><b>$AMBIL_TOTAL_SEMUA[TOTAL_SEMUA]</b></td>
+										</tr>
+									  </table>
+									  </div>
+									 <input type=\"button\" class=\"btn btn-warning btn-flat\" value=\"Cetak\" onclick=\"javascript:printDiv('printlagi')\" />
+									</form>
+
+								  </div>
+								 </div>
+								</div>";
+						
+				
+				break;

@@ -1,0 +1,12 @@
+update pada saat tampung manufacturing belum bisa
+
+
+menu manufacturing, tinggal proses update/edit manufacturing
+
+menu master bahan sudah selesai
+
+kalkulasi bahan di ganti layout / antarmukanya
+
+menu bahan masuk di simpan di bagian keuangan, sedangkan di produksi ada pemerikasaan bahan masuk,
+jika sesuai maka data masuk di simpan dan stock berubah , jika tidak masukan jumlah selisih, dan nantinya akan di buka lagi oleh bagian keuangan 
+
